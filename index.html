@@ -154,6 +154,8 @@
   .offer-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:16px 0;}
   .offer-price{text-align:center;color:var(--mauve-deep);font-size:17px;font-weight:700;margin-bottom:8px;}
   .offer-includes{margin:0 0 14px;padding:0 20px;font-size:14px;color:var(--ink);line-height:2;}
+  .offer-price .was{color:var(--muted);font-weight:500;font-size:.85em;margin-inline-start:6px;}
+  .offer-note{margin:-4px 0 12px;font-size:12.5px;color:var(--mauve);font-weight:600;text-align:center;}
   .offer-option{width:100%;min-height:48px;background:var(--surface);border:1px solid var(--mauve);color:var(--mauve-deep);border-radius:var(--radius-sm);padding:10px;font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:background .15s ease;}
   .offer-option:hover{background:var(--mauve-soft);}
   .offer-option.active{background:var(--mauve-deep);border-color:var(--mauve-deep);color:#fff;}
@@ -583,6 +585,29 @@ const SERVICES = {
           "تقشير وترطيب البشرة",
           "صابون مغربي أصلي مع التبريمة المغربية",
         ]
+      },
+      {
+        id: "hammam-dalka",
+        title: "حمام مغربي فاخر + دلكة مغربية",
+        price: 99,
+        was: 150,
+        note: "العرض لفترة محدودة",
+        includes: ["حمام مغربي فاخر", "دلكة مغربية"]
+      },
+      {
+        id: "hammam-pedicure",
+        title: "حمام مغربي فاخر + بديكير (يد أو رجل)",
+        price: 99,
+        note: "العرض لفترة محدودة",
+        includes: ["حمام مغربي فاخر", "بديكير لليد أو الرجل"]
+      },
+      {
+        id: "hammam-blowdry",
+        title: "حمام مغربي فاخر + استشوار",
+        price: 99,
+        was: 150,
+        note: "العرض لفترة محدودة",
+        includes: ["حمام مغربي فاخر", "استشوار بإطلالة أنيقة"]
       }
     ]
   }
@@ -1052,8 +1077,9 @@ function renderOffersView(cartBar){
     const includesHtml = pkg.includes.map(i=>`<li>${i}</li>`).join('');
     return `
       <div class="offer-card">
-        <div class="offer-price small">${pkg.title} — ${pkg.price} ريال</div>
+        <div class="offer-price small">${pkg.title} — ${pkg.price} ريال${pkg.was ? ` <s class="was">بدلاً من ${pkg.was}</s>` : ''}</div>
         <ul class="offer-includes">${includesHtml}</ul>
+        ${pkg.note ? `<p class="offer-note">${pkg.note}</p>` : ''}
         <button class="offer-option ${active?'active':''}" onclick="togglePackage('${pkg.id}')">${active ? '✓ مُضافة للسلة' : 'أضيفي هذه الباقة'}</button>
       </div>`;
   }).join('');
