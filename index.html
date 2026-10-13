@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>حجز موعد – صالون ألوان نونه للتزيين النسائي</title>
+<meta name="description" content="احجزي موعدك في صالون ألوان نونه للتزيين النسائي بحي الجنادرية، الرياض. اختاري خدمتك وموعدك ثم أكّدي الحجز عبر واتساب.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:title" content="حجز موعد – صالون ألوان نونه للتزيين النسائي">
+<meta property="og:description" content="اختاري خدمتك وموعدك ثم أكّدي الحجز عبر واتساب. حي الجنادرية، الرياض.">
+<meta property="og:image" content="assets/alwan-noona-logo-web.jpg">
+<link rel="icon" type="image/jpeg" href="assets/alwan-noona-logo-web.jpg">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "صالون ألوان نونه للتزيين النسائي",
+  "telephone": "+966581800382",
+  "image": "assets/alwan-noona-logo-web.jpg",
+  "address": { "@type": "PostalAddress", "addressLocality": "الرياض", "addressRegion": "حي الجنادرية", "addressCountry": "SA" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Saturday"], "opens": "13:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday","Friday"], "opens": "14:00", "closes": "22:00" }
+  ]
+}
+</script>
+<style>
+  :root{
+    /* ألوان مستوحاة من الشعار: موف/وردي ترابي + شامبانيا */
+    --bg:#ffffff;
+    --surface:#ffffff;
+    --ink:#3b2b31;
+    --muted:#76646a;
+    --mauve:#8a4d66;
+    --mauve-deep:#6a3850;
+    --mauve-soft:#f5ecef;
+    --champagne:#c4a584;
+    --champagne-soft:#f6efe6;
+    --line:#ebe1de;
+    --line-strong:#d9c9c9;
+    --wa:#1f7a5a;
+    --wa-deep:#18654a;
+    --danger:#a23a3a;
+    --radius:14px;
+    --radius-sm:10px;
+    --font:'IBM Plex Sans Arabic','Tajawal',system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.7;min-height:100vh;}
+  button,input,textarea{font-family:inherit;}
+  button{-webkit-tap-highlight-color:transparent;}
+  a{color:var(--mauve);}
+  :focus-visible{outline:2px solid var(--mauve);outline-offset:2px;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .page{max-width:720px;margin:0 auto;padding:0 16px 110px;}
+
+  /* ===== Hero ===== */
+  .wrap{max-width:1040px;margin:0 auto;padding-inline:16px;}
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.2) blur(8px);}
+  .topbar-in{display:flex;align-items:center;justify-content:space-between;min-height:58px;}
+  .topbar-name{font-weight:700;color:var(--mauve-deep);font-size:16px;}
+  .topbar-links{display:none;gap:26px;}
+  .topbar-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;}
+  .topbar-links a:hover{color:var(--mauve-deep);}
+  .pill-sm{display:inline-flex;align-items:center;min-height:40px;padding:0 20px;border-radius:99px;background:var(--mauve-deep);color:#fff;text-decoration:none;font-size:14px;font-weight:600;}
+  .pill-sm:hover{background:var(--mauve);}
+
+  .hero{display:flex;flex-direction:column-reverse;align-items:center;text-align:center;gap:6px;padding:20px 16px 36px;}
+  .hero-logo{width:min(250px,64vw);}
+  .brand-logo{display:block;width:100%;height:auto;}
+  .eyebrow{margin:0 0 10px;font-size:13px;font-weight:600;color:var(--mauve);letter-spacing:.03em;}
+  .hero-title{margin:0;font-size:clamp(28px,7.6vw,46px);line-height:1.4;font-weight:700;color:var(--ink);}
+  .hero-title .accent{color:var(--mauve);}
+  .tagline{max-width:440px;margin:14px auto 24px;color:var(--muted);font-size:15.5px;line-height:1.9;}
+  .hero-actions{display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto;}
+  .hero-actions a{text-decoration:none;}
+  .btn-link{display:flex;align-items:center;justify-content:center;}
+
+  /* ===== How it works band ===== */
+  .band{background:var(--mauve-soft);border-block:1px solid #efe1e6;padding:26px 0;}
+  .how{list-style:none;margin:0;padding:0;display:grid;gap:18px;}
+  .how li{display:flex;gap:14px;align-items:flex-start;}
+  .how-n{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--surface);border:1px solid var(--mauve);color:var(--mauve-deep);font-weight:700;font-size:15px;display:grid;place-items:center;}
+  .how strong{display:block;color:var(--mauve-deep);font-size:16px;font-weight:700;line-height:1.5;}
+  .how p{margin:2px 0 0;color:var(--muted);font-size:14px;line-height:1.8;}
+
+  /* ===== Info strip ===== */
+  .info{margin:30px auto 0;max-width:calc(1040px - 32px);padding:0;display:grid;grid-template-columns:1fr;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);}
+  .info-item{padding:16px 18px;border-bottom:1px solid var(--line);}
+  .info-item:last-child{border-bottom:0;}
+  .info dt{font-size:12px;font-weight:600;color:var(--mauve);margin:0 0 3px;letter-spacing:.02em;}
+  .info dd{margin:0;font-size:14.5px;color:var(--ink);line-height:1.8;}
+  .info dd a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--champagne);}
+  .info .ltr{direction:ltr;unicode-bidi:embed;display:inline-block;}
+  .hours-line{display:flex;justify-content:space-between;gap:12px;}
+  .hours-line span:last-child{color:var(--muted);}
+
+  /* ===== Stepper ===== */
+  .stepper{display:flex;align-items:flex-start;justify-content:center;margin:34px 0 14px;}
+  .step-dot-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:64px;}
+  .step-dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;background:var(--surface);color:var(--muted);border:1px solid var(--line-strong);transition:background .2s ease,color .2s ease,border-color .2s ease;}
+  .step-dot.active{background:var(--mauve-deep);border-color:var(--mauve-deep);color:#fff;}
+  .step-dot.done{background:var(--mauve-soft);border-color:var(--mauve);color:var(--mauve-deep);}
+  .step-label{font-size:12px;color:var(--muted);font-weight:500;}
+  .step-line{width:44px;height:1px;background:var(--line-strong);margin:15px 2px 0;}
+
+  /* ===== Booking panel ===== */
+  main{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 18px;min-height:240px;}
+  .step-title{font-size:21px;font-weight:700;color:var(--mauve-deep);margin:0 0 6px;text-align:center;line-height:1.5;}
+  .hint{font-size:13px;color:var(--muted);margin:6px 2px;line-height:1.8;}
+  .hint.center{text-align:center;}
+  .hint a{color:var(--mauve);}
+  .link-back{background:none;border:0;padding:8px 0;margin:-6px 0 6px;min-height:44px;color:var(--mauve);font-size:14px;font-weight:600;cursor:pointer;}
+  .link-back:hover{color:var(--mauve-deep);}
+
+  .mini-summary{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:12px;font-size:13.5px;line-height:1.7;}
+  .mini-summary button{flex-shrink:0;min-height:40px;border:1px solid var(--line-strong);background:var(--surface);color:var(--mauve-deep);padding:0 16px;border-radius:99px;font-size:13px;font-weight:600;cursor:pointer;}
+  .mini-summary button:hover{background:var(--mauve-soft);}
+
+  /* ===== Categories ===== */
+  .cat-grid{display:flex;flex-direction:column;margin-top:18px;border-top:1px solid var(--line);}
+  .cat-card{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:62px;padding:12px 4px;background:none;border:0;border-bottom:1px solid var(--line);cursor:pointer;text-align:right;color:var(--ink);transition:background .2s ease,padding .2s ease;}
+  .cat-card:after{content:"";width:9px;height:9px;border-left:1.5px solid var(--champagne);border-bottom:1.5px solid var(--champagne);transform:rotate(45deg);flex-shrink:0;margin-inline-end:6px;}
+  .cat-card:hover{background:var(--champagne-soft);padding-inline:12px;}
+  .cat-label{font-size:16.5px;font-weight:600;color:var(--mauve-deep);}
+
+  /* ===== Services ===== */
+  .service-group{margin-bottom:10px;}
+  .group-title{font-size:13px;font-weight:700;color:var(--mauve);margin:22px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--line);letter-spacing:.02em;}
+  .service-item{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:54px;padding:10px 6px;cursor:pointer;font-size:15px;border-bottom:1px solid #f3eceb;transition:background .15s ease;}
+  .service-item:hover{background:#fcf9f8;}
+  .service-item.selected{background:var(--mauve-soft);}
+  .si-left{display:flex;align-items:center;gap:12px;min-width:0;}
+  .check-box{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1.5px solid var(--line-strong);border-radius:50%;font-size:12px;color:#fff;background:transparent;flex-shrink:0;transition:background .15s ease,border-color .15s ease;}
+  .service-item.selected .check-box{background:var(--mauve-deep);border-color:var(--mauve-deep);}
+  .service-name{color:var(--ink);font-weight:500;}
+  .service-price{color:var(--mauve-deep);font-weight:600;white-space:nowrap;font-size:14px;}
+  .tier-row{display:grid;gap:8px;margin:8px 6px 14px;}
+  .tier-chip{min-height:56px;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:8px 4px;font-size:12.5px;cursor:pointer;color:var(--muted);line-height:1.6;transition:all .15s ease;}
+  .tier-chip b{color:var(--mauve-deep);font-weight:600;}
+  .tier-chip:hover{border-color:var(--mauve);}
+  .tier-chip.active{background:var(--mauve-deep);border-color:var(--mauve-deep);color:#fff;}
+  .tier-chip.active b{color:#fff;}
+  .cart-bar{background:var(--mauve-soft);color:var(--mauve-deep);border:1px solid #e7d3da;border-radius:var(--radius-sm);padding:10px 14px;margin:14px 0 4px;font-size:14px;text-align:center;font-weight:500;}
+
+  /* ===== Offers ===== */
+  .offer-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:16px 0;}
+  .offer-price{text-align:center;color:var(--mauve-deep);font-size:17px;font-weight:700;margin-bottom:8px;}
+  .offer-includes{margin:0 0 14px;padding:0 20px;font-size:14px;color:var(--ink);line-height:2;}
+  .offer-option{width:100%;min-height:48px;background:var(--surface);border:1px solid var(--mauve);color:var(--mauve-deep);border-radius:var(--radius-sm);padding:10px;font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:background .15s ease;}
+  .offer-option:hover{background:var(--mauve-soft);}
+  .offer-option.active{background:var(--mauve-deep);border-color:var(--mauve-deep);color:#fff;}
+
+  /* ===== Date & time ===== */
+  .date-strip{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;margin:0 -2px 14px;scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent;}
+  .date-chip{min-width:64px;min-height:72px;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:8px 4px;text-align:center;cursor:pointer;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;color:var(--ink);transition:all .15s ease;}
+  .date-chip:hover{border-color:var(--mauve);}
+  .date-chip.active{background:var(--mauve-deep);border-color:var(--mauve-deep);color:#fff;}
+  .dc-day{font-size:12px;opacity:.85;}
+  .dc-num{font-size:19px;font-weight:700;line-height:1.3;}
+  .dc-month{font-size:11px;opacity:.85;}
+  .time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px;}
+  .time-chip{min-height:46px;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:8px 4px;font-size:14px;cursor:pointer;color:var(--ink);transition:all .15s ease;}
+  .time-chip:hover{border-color:var(--mauve);}
+  .time-chip.active{background:var(--mauve-deep);border-color:var(--mauve-deep);color:#fff;}
+  .time-chip.taken{opacity:.4;text-decoration:line-through;cursor:not-allowed;background:#f6f2f1;}
+  .time-chip.taken:hover{border-color:var(--line-strong);}
+  .hours-note{background:var(--champagne-soft);border:1px solid #eadfce;border-right:3px solid var(--champagne);border-radius:var(--radius-sm);padding:10px 14px;margin:10px 0 14px;font-size:13.5px;line-height:1.8;color:var(--ink);text-align:right;}
+  .hours-note strong{color:var(--mauve-deep);font-weight:600;}
+  .hours-note-sub{font-size:12px;color:var(--muted);}
+  .slot-msg{background:#fbeeee;border:1px solid #efcaca;color:var(--danger);border-radius:var(--radius-sm);padding:10px 14px;margin:0 0 14px;font-size:13.5px;font-weight:600;text-align:center;line-height:1.8;}
+
+  /* ===== Summary / form ===== */
+  .summary-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:16px 0;}
+  .sc-row{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:14.5px;}
+  .sc-row span{color:var(--muted);}
+  .sc-row b{color:var(--mauve-deep);font-weight:600;text-align:left;}
+  .sc-row.sc-total{border-top:1px solid var(--line);margin-top:6px;padding-top:10px;font-weight:700;}
+  .sc-row.sc-total span{color:var(--ink);}
+
+  .payment-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin:18px 0;}
+  .payment-title{color:var(--mauve-deep);font-size:16px;font-weight:700;margin:0 0 2px;}
+  .payment-sub{font-size:13px;color:var(--muted);margin:0 0 12px;}
+  .pay-row{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:8px;}
+  .pay-row:last-of-type{margin-bottom:0;}
+  .pay-row-text{display:flex;flex-direction:column;gap:1px;min-width:0;}
+  .pay-label{font-size:12px;color:var(--muted);}
+  .pay-value{font-size:14.5px;font-weight:600;color:var(--ink);overflow-wrap:anywhere;}
+  .copy-btn{flex-shrink:0;min-height:40px;border:1px solid var(--line-strong);background:var(--surface);color:var(--mauve-deep);font-size:13px;font-weight:600;border-radius:var(--radius-sm);padding:0 14px;cursor:pointer;white-space:nowrap;}
+  .copy-btn:hover{background:var(--mauve-soft);}
+  .copy-btn.copied{background:var(--mauve-deep);border-color:var(--mauve-deep);color:#fff;}
+  .payment-note{font-size:12.5px;color:var(--muted);margin:12px 2px 0;line-height:1.8;}
+
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:14px;font-weight:600;color:var(--mauve-deep);margin-bottom:6px;}
+  .field input,.field textarea{width:100%;min-height:48px;padding:11px 14px;border-radius:var(--radius-sm);border:1px solid var(--line-strong);font-size:16px;background:var(--surface);color:var(--ink);resize:vertical;}
+  .field input::placeholder,.field textarea::placeholder{color:#a8999e;}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--mauve);box-shadow:0 0 0 3px rgba(138,77,102,.14);}
+  .field-error{color:var(--danger);font-size:12.5px;display:block;min-height:16px;margin-top:4px;}
+
+  /* ===== Actions ===== */
+  .step-actions{margin-top:20px;position:sticky;bottom:0;z-index:5;background:var(--surface);padding:12px 0 calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line);}
+  .btn-primary,.btn-confirm,.btn-ghost{display:block;width:100%;min-height:52px;padding:12px 16px;border-radius:99px;font-size:16px;font-weight:600;cursor:pointer;text-align:center;transition:background .15s ease,border-color .15s ease;}
+  .btn-primary{border:1px solid var(--mauve-deep);background:var(--mauve-deep);color:#fff;}
+  .btn-primary:not(:disabled):hover{background:var(--mauve);border-color:var(--mauve);}
+  .btn-primary:disabled{background:#e4d9d8;border-color:#e4d9d8;color:#9a8c90;cursor:not-allowed;}
+  .btn-confirm{border:1px solid var(--wa);background:var(--wa);color:#fff;font-size:17px;}
+  .btn-confirm:not(:disabled):hover{background:var(--wa-deep);border-color:var(--wa-deep);}
+  .btn-confirm:disabled{opacity:.7;cursor:wait;}
+  .btn-ghost,.btn-secondary{border:1px solid var(--line-strong);background:var(--surface);color:var(--mauve-deep);}
+  .btn-ghost:hover,.btn-secondary:hover{background:var(--mauve-soft);}
+  .btn-secondary{display:block;width:100%;min-height:50px;padding:10px;border-radius:99px;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;}
+  a.btn-ghost{text-decoration:none;display:flex;align-items:center;justify-content:center;}
+
+  .success{text-align:center;}
+  .success .step-actions{position:static;border:0;padding:0;margin-top:18px;}
+  .success-icon{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--mauve);color:var(--mauve-deep);background:var(--mauve-soft);font-size:26px;display:flex;align-items:center;justify-content:center;margin:4px auto 14px;font-weight:600;}
+  .success h2{color:var(--mauve-deep);margin:0 0 6px;font-size:21px;font-weight:700;}
+
+  /* ===== Footer ===== */
+  .site-footer{text-align:center;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.9;}
+  .site-footer p{margin:0 0 4px;}
+  .footer-social{display:flex;justify-content:center;gap:22px;margin-bottom:10px;}
+  .footer-social a{color:var(--mauve-deep);text-decoration:none;font-weight:600;min-height:44px;display:inline-flex;align-items:center;}
+  .disclaimer{margin-top:10px!important;font-size:12px;opacity:.9;line-height:1.8;}
+
+  /* ===== Added features ===== */
+  [hidden]{display:none!important;}
+  .search-box{margin:16px 0 4px;}
+  .search-input{width:100%;min-height:50px;padding:11px 16px;border:1px solid var(--line-strong);border-radius:99px;font-size:16px;background:var(--surface);color:var(--ink);}
+  .search-input::placeholder{color:#a8999e;}
+  .search-input:focus{outline:none;border-color:var(--mauve);box-shadow:0 0 0 3px rgba(138,77,102,.14);}
+  #searchResults:empty{display:none;}
+  .btn-sm{min-height:42px;padding:8px 18px;font-size:14px;width:auto;display:inline-flex;align-items:center;justify-content:center;}
+  .last-booking{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--champagne-soft);border:1px solid #eadfce;border-radius:var(--radius);padding:12px 14px;margin:14px 0 4px;}
+  .last-booking strong{display:block;font-size:13px;color:var(--mauve-deep);}
+  .last-booking p{margin:2px 0 0;font-size:13.5px;color:var(--ink);line-height:1.7;}
+  .cart-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:right;}
+  .link-clear{flex-shrink:0;min-height:36px;border:0;background:none;color:var(--mauve);font-size:13px;font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+  .earliest-btn{margin:12px 0 0;}
+  .sc-end{display:flex;align-items:center;gap:10px;}
+  .sc-remove{min-height:32px;border:0;background:none;color:var(--muted);font-size:12.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+  .sc-remove:hover{color:var(--danger);}
+  .wa-float{position:fixed;left:14px;bottom:92px;z-index:30;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border-radius:99px;background:var(--wa);color:#fff;text-decoration:none;font-size:14px;font-weight:600;box-shadow:0 6px 18px rgba(31,122,90,.28);}
+  .wa-float:hover{background:var(--wa-deep);}
+  .wa-float:focus-visible{outline-color:var(--wa-deep);}
+
+  /* ===== Check booking ===== */
+  .hero-check{margin:14px 0 0;font-size:14px;}
+  .hero-check a{color:var(--mauve);font-weight:600;text-underline-offset:4px;}
+  .check{margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 18px;scroll-margin-top:72px;}
+  .check h2{margin:0 0 4px;font-size:19px;font-weight:700;color:var(--mauve-deep);}
+  .check .hint{margin:0 0 16px;}
+  .check-fields{display:grid;gap:0;}
+  #checkResult{margin-top:16px;}
+  .bk-card{border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:10px;background:var(--bg);}
+  .bk-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px;}
+  .bk-date{font-weight:700;color:var(--mauve-deep);font-size:15px;}
+  .bk-time{font-size:13.5px;color:var(--muted);}
+  .bk-badge{font-size:12px;font-weight:600;padding:3px 12px;border-radius:99px;background:var(--mauve-soft);color:var(--mauve-deep);white-space:nowrap;}
+  .bk-badge.past{background:#f1ecea;color:var(--muted);}
+  .bk-services{margin:4px 0 0;padding:0 18px;font-size:14px;line-height:1.9;}
+  .bk-total{margin:6px 0 0;font-size:14px;color:var(--muted);}
+  .bk-actions{margin-top:10px;}
+  .check-note{font-size:13px;color:var(--muted);line-height:1.8;margin:6px 0 0;}
+  .check-empty{background:var(--champagne-soft);border:1px solid #eadfce;border-radius:var(--radius-sm);padding:12px 14px;font-size:14px;line-height:1.9;}
+  .check-empty a{color:var(--mauve-deep);font-weight:600;}
+
+  /* ===== 3D depth: soft and tasteful (all disabled for "reduce motion") ===== */
+  /* يخفي حواف خلفية صورة الشعار الباهتة فقط (الشعار نفسه لا يتغير) */
+  .brand-logo{-webkit-mask-image:radial-gradient(closest-side,#000 93%,transparent 100%);mask-image:radial-gradient(closest-side,#000 93%,transparent 100%);}
+  [data-tilt]{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .35s ease;will-change:transform;}
+  [data-tilt].tilting{transition:transform .06s linear;}
+  .cat-card[data-tilt]{transition:background .2s ease,padding .2s ease,transform .35s ease;}
+  .cat-card[data-tilt].tilting{transition:background .2s ease,padding .2s ease,transform .06s linear;}
+
+  .hero-logo{position:relative;perspective:1100px;animation:drift 9s ease-in-out infinite;}
+  .hero-logo:after{content:"";display:block;width:54%;height:16px;margin:8px auto 0;border-radius:50%;background:radial-gradient(ellipse at center,rgba(106,56,80,.2),transparent 70%);animation:groundShadow 9s ease-in-out infinite;}
+  .pearl{position:absolute;z-index:2;border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle at 32% 28%,#fff 0,#f7e2e9 22%,#d9a3b6 62%,#a76582 100%);
+    box-shadow:inset -5px -7px 12px rgba(106,56,80,.32),0 12px 20px rgba(106,56,80,.2);
+    transform:translate3d(calc(var(--mx,0) * var(--d,30) * 1px),calc(var(--my,0) * var(--d,30) * 1px),0);
+    animation:floaty 6.5s ease-in-out infinite;}
+  .pearl.p1{width:44px;height:44px;top:3%;right:2%;--d:-46;}
+  .pearl.p2{width:26px;height:26px;bottom:16%;left:0;--d:62;animation-delay:-2.2s;
+    background:radial-gradient(circle at 32% 28%,#fff 0,#f6ead9 24%,#d9bd93 64%,#a98456 100%);}
+  .pearl.p3{width:15px;height:15px;top:40%;left:7%;--d:92;animation-delay:-4.1s;}
+  @keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -12px}}
+  @keyframes drift{0%,100%{translate:0 0}50%{translate:0 -7px}}
+  @keyframes groundShadow{0%,100%{scale:1;opacity:.9}50%{scale:.88;opacity:.6}}
+
+  .js .reveal{opacity:0;translate:0 26px;rotate:x 12deg;transition:opacity .7s ease,translate .7s cubic-bezier(.2,.8,.2,1),rotate .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rd,0s);}
+  .js .reveal.in{opacity:1;translate:0 0;rotate:x 0deg;}
+  .how{perspective:1000px;}
+  .js .how li.in .how-n{animation:coin .9s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--rd,0s) + .25s);}
+  @keyframes coin{from{transform:rotateY(-180deg) scale(.6)}to{transform:rotateY(0) scale(1)}}
+
+  /* step change in the booking panel: gentle card flip-in */
+  @keyframes flipIn{from{opacity:0;transform:perspective(1100px) rotateY(-9deg) translateX(16px)}to{opacity:1;transform:none}}
+  #app.step-enter{animation:flipIn .45s cubic-bezier(.2,.8,.2,1) backwards;}
+
+  /* tactile 3D buttons */
+  .btn-primary:not(:disabled),.pill-sm{box-shadow:0 4px 0 #46223a,0 10px 18px rgba(106,56,80,.2);transition:transform .12s ease,box-shadow .12s ease,background .15s ease;}
+  .btn-primary:not(:disabled):hover,.pill-sm:hover{transform:translateY(-1px);}
+  .btn-primary:not(:disabled):active,.pill-sm:active{transform:translateY(3px);box-shadow:0 1px 0 #46223a,0 3px 8px rgba(106,56,80,.2);}
+  .btn-confirm:not(:disabled){box-shadow:0 4px 0 #134d39,0 10px 18px rgba(31,122,90,.22);transition:transform .12s ease,box-shadow .12s ease,background .15s ease;}
+  .btn-confirm:not(:disabled):active{transform:translateY(3px);box-shadow:0 1px 0 #134d39,0 3px 8px rgba(31,122,90,.2);}
+  .step-dot.active{background:radial-gradient(circle at 32% 28%,#a2627d,#6a3850 70%);box-shadow:0 4px 8px rgba(106,56,80,.3),inset -2px -3px 5px rgba(0,0,0,.18);}
+  main,.check,.info{box-shadow:0 1px 0 #fff inset,0 2px 4px rgba(72,45,52,.04),0 18px 38px rgba(72,45,52,.07);}
+  .bk-card,.offer-card,.summary-card{transition:transform .25s ease,box-shadow .25s ease;}
+  .bk-card:hover,.offer-card:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(72,45,52,.1);}
+
+  /* ===== Larger screens ===== */
+  @media (min-width:700px){
+    .page{padding:0 24px 72px;}
+    .wrap{padding-inline:28px;}
+    .topbar-links{display:flex;}
+    .hero{flex-direction:row;justify-content:space-between;text-align:right;gap:48px;padding:56px 28px 56px;}
+    .hero-copy{flex:1 1 0;max-width:520px;}
+    .hero-logo{flex:0 0 340px;width:340px;}
+    .tagline{margin-inline:0;}
+    .hero-actions{flex-direction:row;max-width:none;margin:0;}
+    .hero-actions a{min-width:180px;}
+    .band{padding:34px 0;}
+    .how{grid-template-columns:repeat(3,1fr);gap:32px;}
+    .info{grid-template-columns:1fr 1fr 1.25fr;max-width:calc(1040px - 56px);}
+    .info-item{border-bottom:0;border-left:1px solid var(--line);}
+    .info-item:last-child{border-left:0;}
+    main{padding:36px 40px;}
+    .time-grid{grid-template-columns:repeat(4,1fr);}
+    .step-actions{position:static;border:0;padding:0;margin-top:24px;}
+    .cat-card{min-height:68px;}
+    .wa-float{bottom:24px;left:24px;}
+    .check{padding:30px 40px;}
+    .check-fields{grid-template-columns:1fr 1fr;gap:14px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*:before,*:after{transition:none!important;animation:none!important;}
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span class="topbar-name">صالون ألوان نونه</span>
+    <nav class="topbar-links" aria-label="التنقل الرئيسي"><a href="#hours">أوقات الدوام</a><a href="#book">الحجز</a><a href="#check">حجزي</a></nav>
+    <a class="pill-sm" href="#book">احجزي الآن</a>
+  </div>
+</div>
+
+<header class="hero wrap">
+  <div class="hero-copy">
+    <p class="eyebrow">صالون ألوان نونه للتزيين النسائي · حي الجنادرية، الرياض</p>
+    <h1 class="hero-title">احجزي موعدك<br>في <span class="accent">ثلاث خطوات</span></h1>
+    <p class="tagline">اختاري خدمتك وموعدك المناسب، ثم أرسلي تأكيد الحجز مباشرة عبر واتساب.</p>
+    <div class="hero-actions">
+      <a class="btn-primary btn-link" href="#book">ابدئي الحجز</a>
+      <a class="btn-ghost" href="tel:0581800382">اتصال <span dir="ltr">0581800382</span></a>
+    </div>
+    <p class="hero-check"><a href="#check">لديك حجز؟ تحققي من موعدك</a></p>
+  </div>
+  <div class="hero-logo">
+    <span class="pearl p1" aria-hidden="true"></span><span class="pearl p2" aria-hidden="true"></span><span class="pearl p3" aria-hidden="true"></span>
+    <img class="brand-logo" data-tilt="9" src="assets/alwan-noona-logo-web.jpg" alt="شعار صالون ألوان نونه للتزيين النسائي" width="1256" height="1256">
+  </div>
+</header>
+
+<section class="band" aria-label="خطوات الحجز">
+  <div class="wrap">
+    <ol class="how">
+      <li class="reveal" style="--rd:0s"><span class="how-n">1</span><div><strong>اختاري الخدمة</strong><p>من العناية بالشعر والأظافر والجسم والمكياج والعروض.</p></div></li>
+      <li class="reveal" style="--rd:.14s"><span class="how-n">2</span><div><strong>حددي اليوم والوقت</strong><p>حسب أوقات دوام الصالون.</p></div></li>
+      <li class="reveal" style="--rd:.28s"><span class="how-n">3</span><div><strong>أكّدي عبر واتساب</strong><p>أدخلي بياناتك وأرسلي الحجز مباشرة.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<div class="wrap">
+  <dl class="info reveal" id="hours">
+    <div class="info-item"><dt>الموقع</dt><dd><a id="mapsLink" href="#" target="_blank" rel="noopener">حي الجنادرية، الرياض</a></dd></div>
+    <div class="info-item"><dt>رقم الحجز</dt><dd><a class="ltr" href="tel:0581800382">0581800382</a></dd></div>
+    <div class="info-item"><dt>أوقات الدوام</dt><dd>
+      <div class="hours-line"><span>الأحد–الأربعاء والسبت</span><span><bdi>1–10</bdi> م</span></div>
+      <div class="hours-line"><span>الخميس والجمعة</span><span><bdi>2–10</bdi> م</span></div>
+    </dd></div>
+  </dl>
+</div>
+
+<div class="page">
+  <div id="book" style="scroll-margin-top:72px"></div>
+  <div id="stepper" class="stepper"></div>
+  <div id="summaryBar"></div>
+  <main id="app"></main>
+
+  <section class="check reveal" id="check" aria-labelledby="checkTitle">
+    <h2 id="checkTitle">تحققي من حجزك</h2>
+    <p class="hint">أدخلي اسمك الأول ورقم الجوال الذي حجزتِ به لعرض موعدك.</p>
+    <form id="checkForm" onsubmit="return lookupBooking(event)" novalidate>
+      <div class="check-fields">
+        <div class="field">
+          <label for="chkName">الاسم الأول</label>
+          <input id="chkName" type="text" autocomplete="given-name" placeholder="مثال: سارة">
+        </div>
+        <div class="field">
+          <label for="chkPhone">رقم الجوال</label>
+          <input id="chkPhone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" style="text-align:right" placeholder="05XXXXXXXX">
+        </div>
+      </div>
+      <span class="field-error" id="err-chk" role="alert"></span>
+      <button class="btn-primary" type="submit" id="chkBtn">عرض حجزي</button>
+    </form>
+    <div id="checkResult" aria-live="polite"></div>
+  </section>
+
+  <footer class="site-footer reveal">
+    <div class="footer-social">
+      <a href="https://www.snapchat.com/@alwannoona" target="_blank" rel="noopener">Snapchat</a>
+      <a href="https://www.instagram.com/alwannoona/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p>صالون ألوان نونه للتزيين النسائي · حي الجنادرية، الرياض</p>
+    <p>الأحد–الأربعاء والسبت <bdi>1–10</bdi> م · الخميس والجمعة <bdi>2–10</bdi> م</p>
+    <p class="disclaimer">الأسعار موضّحة حسب قائمة أسعار الصالون وقد تتغيّر دون إشعار مسبق. الأسعار للخدمات المرتبطة بطول/كثافة الشعر تبدأ من السعر الموضّح وتُحدَّد نهائيًا في الصالون.</p>
+  </footer>
+
+</div>
+
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="استفسار عبر واتساب">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.5c.3 2.2 2.3 4.2 4.5 4.6l1.2-1.2-1.8-1-.8.7c-.8-.4-1.5-1.1-1.9-1.9l.7-.8-1-1.8z"/></svg>
+  <span>استفسار واتساب</span>
+</a>
+
+<script>
+/* ============================================================
+   إعدادات الصالون — عدّلي هنا فقط عند الحاجة
+   ============================================================ */
+const SALON = {
+  name: "صالون ألوان نونه للتزيين النسائي",
+  phoneDisplay: "0581800382",
+  whatsapp: "966581800382", // رقم واتساب الصالون بصيغة دولية بدون علامة +
+  mapsQuery: "RV69+27 الجنادرية، الرياض",
+  // أوقات الحجز حسب كل يوم (open = أول موعد، close = آخر موعد) (0=أحد،1=اثنين،2=ثلاثاء،3=أربعاء،4=خميس،5=جمعة،6=سبت)
+  hoursByDay: {
+    0: { open: 13 * 60, close: 22 * 60 }, // الأحد 1:00م – 10:00م
+    1: { open: 13 * 60, close: 22 * 60 }, // الاثنين 1:00م – 10:00م
+    2: { open: 13 * 60, close: 22 * 60 }, // الثلاثاء 1:00م – 10:00م
+    3: { open: 13 * 60, close: 22 * 60 }, // الأربعاء 1:00م – 10:00م
+    4: { open: 14 * 60, close: 22 * 60 }, // الخميس 2:00م – 10:00م
+    5: { open: 14 * 60, close: 22 * 60 }, // الجمعة 2:00م – 10:00م
+    6: { open: 13 * 60, close: 22 * 60 }, // السبت 1:00م – 10:00م
+  },
+  // أيام الإجازة الأسبوعية بالكامل (اتركيها [] لأن كل الأيام فيها دوام حسب الجدول أعلاه)
+  closedWeekdays: [],
+  slotInterval: 30,      // الفاصل بين كل موعد وآخر (بالدقائق)
+  bookingWindowDays: 21, // عدد الأيام القادمة المتاحة للحجز
+  leadTimeMinutes: 60,   // أقل مهلة قبل الموعد لو الحجز في نفس اليوم
+  maxConcurrentBookings: 2, // عدد الحجوزات المسموحة في نفس الموعد (يتحدّث تلقائيًا من لوحة الإدارة عند الاتصال بالسيرفر)
+  // رابط Google Apps Script اللي يحفظ الحجوزات ويقفل المواعيد المحجوزة عند كل الزبونات
+  // (الصقي الرابط اللي ينتهي بـ /exec بين علامتي التنصيص)
+  bookingApiUrl: "https://nfhrhftqptnchspncsfi.supabase.co/functions/v1/booking-api",
+  // بيانات التحويل البنكي — تظهر في صفحة الدفع (الخطوة الثالثة)
+  bank: {
+    bankName: "البنك الأهلي السعودي (SNB)",
+    accountName: "صالون ألوان نونه للتزيين النسائي",
+    accountNumber: "01400030948603",
+    iban: "SA2810000001400030948603"
+  }
+};
+
+const TIER_LABELS = { S:"قصير", M:"متوسط", L:"طويل", XL:"طويل جدًا" };
+
+const SERVICES = {
+  hair: {
+    label: "العناية بالشعر",
+    groups: [
+      { title: "صبغات وتسريحات", items: [
+        { name:"هايلايت وولايت", tiers:{S:150,M:170,L:200,XL:300} },
+        { name:"صبغة شعر لون واحد", tiers:{S:50,M:80,L:100,XL:150} },
+        { name:"صبغة جذور", price:50 },
+        { name:"صبغة لون واحد بدون أمونيا", tiers:{S:100,M:170,L:200,XL:250} },
+        { name:"رينساج", tiers:{S:70,M:100,L:170,XL:200} },
+        { name:"استشوار شعر", tiers:{S:50,L:90}, tierKeys:['S','L'] },
+        { name:"استشوار ووفي", price:80 },
+        { name:"تسريحة شعر", price:150 },
+      ]},
+      { title: "معالجات العناية", items: [
+        { name:"معالج بروتين", tiers:{S:250,M:350,L:400,XL:600} },
+        { name:"معالج بارد فلر", tiers:{S:100,M:150,L:200,XL:250} },
+        { name:"معالج جذور", tiers:{S:200,M:230,L:260,XL:300} },
+        { name:"معالج السدر الطبيعي", price:100 },
+        { name:"تركيب خصلة", price:5, unit:"للخصلة" },
+        { name:"صيانة خصلة", price:9, unit:"للخصلة" },
+        { name:"فك و صيانة خصلة", price:15, unit:"للخصلة" },
+        { name:"20 خصلة إكستنشن", price:599 },
+        { name:"إكستنشن كلبسات 100 جرام", price:599 },
+      ]},
+      { title: "فروة، قص وغسيل", items: [
+        { name:"تنظيف الفروة", price:100 },
+        { name:"تنظيف الفروة مع الماسك", price:150 },
+        { name:"غسيل شعر", price:10 },
+        { name:"غسيل الشعر من الحناء والسدر", price:25 },
+        { name:"حمام زيت عادي", price:57 },
+        { name:"قص موديل", price:60 },
+        { name:"قص أطراف", price:20 },
+        { name:"قص ماكينة", price:110 },
+      ]},
+    ]
+  },
+  nails: {
+    label: "العناية بالأظافر",
+    groups: [
+      { title: "مانيكير وبادكير", items: [
+        { name:"بادكير ومانكير", price:90 },
+        { name:"تركيب أظافر", price:50 },
+        { name:"لون أظافر", price:20 },
+        { name:"لون فرنش", price:35 },
+        { name:"جل فرنش", price:70 },
+        { name:"لون جل أظافر", price:100 },
+        { name:"إزالة لون جل", price:70 },
+        { name:"إضافة لون جل للخدمة", price:70 },
+      ]},
+      { title: "إكستنشن وتصاميم", items: [
+        { name:"أمبري لون عادي", price:100 },
+        { name:"قص وبرد الأظافر", price:20 },
+        { name:"نيل آرت للأصبع الواحد", price:10 },
+        { name:"بياب بدون إكستنشن", price:200 },
+        { name:"بياب مع إكستنشن", price:350 },
+        { name:"تركيب أظافر أكريليك أو جل", price:350 },
+        { name:"سوفت جل إكستنشن", price:350 },
+        { name:"إزالة أكريليك أو جل", price:175 },
+      ]},
+    ]
+  },
+  body: {
+    label: "العناية بالجسم",
+    groups: [
+      { title: "حمامات ودلك", items: [
+        { name:"حمام مغربي", price:99 },
+        { name:"حمام مغربي ملكي", price:199 },
+        { name:"دلكة سودانية", price:99 },
+        { name:"تنظيف بشرة عادي", price:70 },
+      ]},
+      { title: "إزالة الشعر", items: [
+        { name:"حف جسم كامل", price:150 },
+        { name:"حف يدين ورجول", price:90 },
+        { name:"حف نصف يدين", price:30 },
+        { name:"حف نصف رجول", price:40 },
+        { name:"شمع وجه", price:40 },
+        { name:"شمع شنب", price:10 },
+        { name:"شمع حواجب", price:20 },
+        { name:"صبغة و تقشير", price:30 },
+      ]},
+    ]
+  },
+  makeup: {
+    label: "المكياج",
+    groups: [
+      { title: "خدمات المكياج", items: [
+        { name:"مكياج عيون", price:100 },
+        { name:"مكياج ناعم", price:150 },
+        { name:"مكياج عروس", price:200 },
+      ]},
+    ]
+  },
+  offers: {
+    label: "العروض", isOffers: true,
+    // باقات شهرية بسعر ثابت — تُضاف للسلة كخدمة واحدة
+    packages: [
+      {
+        id: "monthly-care",
+        title: "باكج العناية الشهري",
+        price: 250,
+        includes: [
+          "جلستين حمام مغربي فاخر",
+          "جلستين بادكير ومانيكير (يدين ورجول)",
+          "تقشير وترطيب البشرة",
+          "صابون مغربي أصلي مع التبريمة المغربية",
+        ]
+      }
+    ]
+  }
+};
+
+/* ============================================================
+   الحالة والتخزين المحلي
+   ============================================================ */
+const USE_API = !!SALON.bookingApiUrl;
+let takenSlots = USE_API ? {} : JSON.parse(localStorage.getItem('ann_taken_slots') || '{}');
+let slotsLoaded = !USE_API;   // هل تم تحميل المواعيد المحجوزة من السيرفر
+let slotsLoadFailed = false;
+const savedClient = JSON.parse(localStorage.getItem('ann_client_info') || 'null');
+
+let state = {
+  view: 'categories',
+  categoryKey: null,
+  cart: [],           // مصفوفة الخدمات المختارة: {id, name, price, tier}
+  _openTierId: null,  // معرّف الخدمة المفتوح حاليًا لاختيار الفئة (S/M/L/XL)
+  date: null,
+  time: null,
+  name: savedClient ? (savedClient.name || '') : '',
+  phone: savedClient ? (savedClient.phone || '') : '',
+  notes: '',
+  step: 1,
+  submitted: false,
+  submitting: false,  // جاري تثبيت الموعد
+  slotMsg: '',        // رسالة تظهر في صفحة الموعد (مثلاً: الموعد انحجز للتو)
+  submitError: '',    // رسالة خطأ في صفحة التأكيد
+  query: ''           // نص البحث في الخدمات
+};
+let lastWaUrl = '';
+
+/* ============================================================
+   ميزات إضافية: بحث، مسودة محفوظة، أقرب موعد، تذكير بالتقويم
+   ============================================================ */
+const DRAFT_KEY = 'ann_draft';
+
+// يعيد بناء السلة من القائمة الحالية فتُحدَّث الأسعار وتُتجاهل الخدمات غير الموجودة
+function rebuildCart(items){
+  const out = [];
+  (items || []).forEach(i=>{
+    if(!i || typeof i.id !== 'string') return;
+    if(i.id.indexOf('pkg:') === 0){
+      const p = SERVICES.offers.packages.find(p=>'pkg:'+p.id === i.id);
+      if(p) out.push({ id:i.id, name:p.title, price:p.price, tier:null });
+      return;
+    }
+    const [ck, gi, ii] = i.id.split(':');
+    const cat = SERVICES[ck];
+    const it = cat && cat.groups && cat.groups[+gi] && cat.groups[+gi].items[+ii];
+    if(!it) return;
+    if(it.tiers){
+      if(i.tier && it.tiers[i.tier] != null) out.push({ id:i.id, name:it.name, price:it.tiers[i.tier], tier:i.tier });
+    } else {
+      out.push({ id:i.id, name:it.name, price:it.price, tier:null });
+    }
+  });
+  return out;
+}
+function saveDraft(){
+  try{
+    if(state.submitted){ localStorage.removeItem(DRAFT_KEY); return; }
+    if(!state.cart.length){ localStorage.removeItem(DRAFT_KEY); return; }
+    localStorage.setItem(DRAFT_KEY, JSON.stringify({
+      cart: state.cart, date: state.date ? toIsoDate(state.date) : null,
+      time: state.time, notes: state.notes, savedAt: Date.now()
+    }));
+  }catch(e){}
+}
+function restoreDraft(){
+  try{
+    const d = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null');
+    if(!d || !Array.isArray(d.cart)) return;
+    if(Date.now() - d.savedAt > 7*24*60*60*1000){ localStorage.removeItem(DRAFT_KEY); return; }
+    const cart = rebuildCart(d.cart);
+    if(!cart.length) return;
+    state.cart = cart;
+    state.notes = d.notes || '';
+    if(d.date && !USE_API){ // مع السيرفر تُحسب الأوقات من جديد حسب الخدمات
+      const [y,m,dd] = d.date.split('-').map(Number);
+      const dt = new Date(y, m-1, dd);
+      if(getBookableDates().some(x=>isSameDay(x, dt))){
+        state.date = dt;
+        if(d.time && getTimeSlotsForDate(dt).includes(d.time) && !isSlotFull(d.date, d.time)) state.time = d.time;
+      }
+    }
+  }catch(e){}
+}
+function clearCart(){ state.cart = []; state._openTierId = null; render(); }
+
+/* بحث في الخدمات: يتجاهل التشكيل ويوحّد الهمزات والتاء المربوطة */
+function normAr(s){
+  return (s||'').toString().replace(/[\u064B-\u065F\u0670\u0640]/g,'')
+    .replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/ئ/g,'ي').replace(/ؤ/g,'و')
+    .replace(/باديكير|بديكير|بيديكير/g,'بادكير').replace(/ماني?كير|منيكير/g,'مانكير') // تهجئات شائعة
+    .toLowerCase().trim();
+}
+function searchResultsHtml(){
+  const q = normAr(state.query);
+  if(!q) return '';
+  const terms = q.split(/\s+/);
+  const matches = text => { const n = normAr(text); return terms.every(t=>n.includes(t)); };
+  let html = '', count = 0;
+  Object.keys(SERVICES).forEach(ck=>{
+    const cat = SERVICES[ck];
+    let block = '';
+    if(cat.isOffers){
+      cat.packages.forEach(pkg=>{
+        if(!matches(cat.label+' '+pkg.title+' '+pkg.includes.join(' '))) return;
+        const inCart = !!findCartItem('pkg:'+pkg.id);
+        count++;
+        block += `<div class="service-item ${inCart?'selected':''}" role="checkbox" aria-checked="${inCart}" tabindex="0" data-focus="pkg:${pkg.id}" onkeydown="activateKey(event,this)" onclick="togglePackage('${pkg.id}')">
+          <span class="si-left"><span class="check-box">${inCart?'✓':''}</span><span class="service-name">${pkg.title}</span></span>
+          <span class="service-price">${pkg.price} ريال</span></div>`;
+      });
+    } else {
+      cat.groups.forEach((g, gi)=>{
+        g.items.forEach((it, ii)=>{
+          if(!matches(cat.label+' '+g.title+' '+it.name)) return;
+          count++;
+          block += renderServiceItem(ck, gi, ii, it);
+        });
+      });
+    }
+    if(block) html += `<h3 class="group-title">${cat.label}</h3>${block}`;
+  });
+  return count ? html : '<p class="hint center">لا توجد خدمة بهذا الاسم، جرّبي كلمة أخرى أو تصفّحي الأقسام.</p>';
+}
+function onSearchInput(value){
+  state.query = value;
+  const has = !!normAr(value);
+  document.getElementById('searchResults').innerHTML = searchResultsHtml();
+  document.getElementById('catList').hidden = has;
+}
+function activateKey(e, el){
+  if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); }
+}
+
+/* آخر حجز على هذا الجهاز */
+function getLastBooking(){
+  try{
+    const list = JSON.parse(localStorage.getItem('ann_my_bookings') || '[]');
+    const b = list[list.length-1];
+    if(!b || !Array.isArray(b.services)) return null;
+    const cart = rebuildCart(b.services);
+    return cart.length ? { cart } : null;
+  }catch(e){ return null; }
+}
+function lastBookingHtml(){
+  if(state.cart.length || normAr(state.query)) return '';
+  const b = getLastBooking();
+  if(!b) return '';
+  const names = b.cart.map(i => i.tier ? `${i.name} (${TIER_LABELS[i.tier]})` : i.name).join('، ');
+  return `<div class="last-booking"><div><strong>حجزك السابق</strong><p>${escapeHtml(names)}</p></div><button type="button" class="btn-ghost btn-sm" onclick="rebookLast()">أعيدي نفس الخدمات</button></div>`;
+}
+function rebookLast(){
+  const b = getLastBooking();
+  if(!b) return;
+  state.cart = b.cart;
+  render();
+}
+
+/* أقرب موعد متاح */
+async function pickEarliest(){
+  if(USE_API){
+    state.slotMsg = ''; render();
+    try{
+      const res = await fetch(SALON.bookingApiUrl + '?action=earliest&items=' + encodeURIComponent(itemsQuery()) + '&t=' + Date.now());
+      const data = await res.json();
+      if(!data || !data.ok){
+        state.slotMsg = data && data.reason === 'none' ? 'لا توجد مواعيد متاحة لخدماتك خلال الفترة القادمة.' : 'تعذّر جلب أقرب موعد، حاولي مرة ثانية.';
+        render(); return;
+      }
+      const [y,m,d] = data.date.split('-').map(Number);
+      state.date = new Date(y, m-1, d);
+      await loadAvailability(data.date, true);
+      state.time = data.time; state.slotMsg = '';
+      render();
+      const a = document.querySelector('.date-chip.active');
+      if(a && a.scrollIntoView) a.scrollIntoView({ inline:'center', block:'nearest' });
+    }catch(e){ state.slotMsg = 'تعذّر الاتصال، حاولي مرة ثانية.'; render(); }
+    return;
+  }
+  if(!slotsLoaded){ state.slotMsg = 'جاري تحميل المواعيد، حاولي بعد لحظات.'; render(); return; }
+  for(const d of getBookableDates()){
+    const iso = toIsoDate(d);
+    const t = getTimeSlotsForDate(d).find(t=>!isSlotFull(iso, t));
+    if(t){
+      state.date = d; state.time = t; state.slotMsg = '';
+      render();
+      const a = document.querySelector('.date-chip.active');
+      if(a && a.scrollIntoView) a.scrollIntoView({ inline:'center', block:'nearest' });
+      return;
+    }
+  }
+  state.slotMsg = 'لا توجد مواعيد متاحة خلال الفترة القادمة.';
+  render();
+}
+
+/* تذكير بالموعد في تقويم الجوال (ملف .ics، التوقيت: الرياض UTC+3) */
+function downloadIcs(){
+  if(!state.date || !state.time) return;
+  const [h, m] = state.time.split(':').map(Number);
+  const start = new Date(Date.UTC(state.date.getFullYear(), state.date.getMonth(), state.date.getDate(), h-3, m));
+  let end = new Date(start.getTime() + 60*60000);
+  if(state.endTime){ // وقت الانتهاء الفعلي من السيرفر (مجموع مدد الخدمات)
+    const [eh, em] = state.endTime.split(':').map(Number);
+    end = new Date(Date.UTC(state.date.getFullYear(), state.date.getMonth(), state.date.getDate(), eh-3, em));
+  }
+  const fmt = d => d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+  const esc = s => String(s).replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');
+  const services = state.cart.map(i => i.tier ? `${i.name} (${TIER_LABELS[i.tier]})` : i.name).join('، ');
+  const ics = [
+    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Alwan Noona//Booking//AR','CALSCALE:GREGORIAN',
+    'BEGIN:VEVENT','UID:'+Date.now()+'@alwannoona','DTSTAMP:'+fmt(new Date()),
+    'DTSTART:'+fmt(start),'DTEND:'+fmt(end),
+    'SUMMARY:'+esc('موعدي في '+SALON.name),
+    'DESCRIPTION:'+esc('الخدمات: '+services+'\nالإجمالي: '+cartTotal()+' ريال\nرقم الصالون: '+SALON.phoneDisplay),
+    'LOCATION:'+esc('حي الجنادرية، الرياض'),
+    'BEGIN:VALARM','TRIGGER:-PT2H','ACTION:DISPLAY','DESCRIPTION:'+esc('تذكير بموعدك في الصالون'),'END:VALARM',
+    'END:VEVENT','END:VCALENDAR'
+  ].join('\r\n');
+  const url = URL.createObjectURL(new Blob([ics], { type:'text/calendar;charset=utf-8' }));
+  const a = document.createElement('a');
+  a.href = url; a.download = 'alwan-noona-booking.ics';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url), 1000);
+}
+
+/* ============================================================
+   المواعيد المحجوزة (مشتركة بين كل الزبونات عبر Google Sheets)
+   ============================================================ */
+/* مع السيرفر: الأوقات المتاحة تُحسب حسب الخدمات المختارة (مدة كل خدمة) وحسب الموظفة المختصة ودوامها وإجازتها.
+   النتيجة لكل (سلة خدمات + يوم) تُحفظ هنا مؤقتًا وتتحدّث كل دقيقة أثناء اختيار الموعد. */
+const availCache = {};
+function cartKey(){ return state.cart.map(i => i.id + '~' + (i.tier || '')).sort().join(','); }
+function itemsQuery(){ return state.cart.map(i => i.id + (i.tier ? '~' + i.tier : '')).join(','); }
+function availFor(iso){ return availCache[cartKey() + '|' + iso]; }
+function formatDuration(min){
+  const h = Math.floor(min / 60), m = min % 60;
+  if(!h) return `${m} دقيقة`;
+  if(!m) return h === 1 ? 'ساعة' : h === 2 ? 'ساعتان' : `${h} ساعات`;
+  return `${h === 1 ? 'ساعة' : h === 2 ? 'ساعتان' : h + ' ساعات'} و${m} دقيقة`;
+}
+async function loadAvailability(iso, force){
+  if(!USE_API || !state.cart.length) return;
+  const key = cartKey() + '|' + iso;
+  if(!force && availCache[key] && availCache[key] !== 'error') return;
+  if(!availCache[key] || availCache[key] === 'error'){ availCache[key] = 'loading'; if(state.step === 2 && !state.submitted) render(); }
+  try{
+    const res = await fetch(SALON.bookingApiUrl + '?action=availability&date=' + iso + '&items=' + encodeURIComponent(itemsQuery()) + '&t=' + Date.now());
+    const data = await res.json();
+    if(!data || !data.ok) throw new Error('bad response');
+    availCache[key] = { times: data.times || [], minutes: data.minutes || 0 };
+  }catch(e){
+    availCache[key] = 'error';
+  }
+  // لو الوقت المختار لم يعد متاحًا (انحجز من زبونة ثانية) نلغي اختياره
+  const a = availCache[key];
+  if(state.date && toIsoDate(state.date) === iso && state.time && a && a.times && !a.times.some(x => x.t === state.time) && !state.submitted && !state.submitting){
+    state.time = null;
+    if(state.step === 3) state.step = 2;
+    state.slotMsg = 'الوقت الذي اخترته لم يعد متاحًا، اختاري وقتًا آخر.';
+  }
+  if(state.step === 2 && !state.submitted) render();
+}
+function loadTakenSlots(){
+  if(!USE_API) return;
+  slotsLoaded = true;
+  if(state.date) return loadAvailability(toIsoDate(state.date), true);
+}
+setInterval(()=>{ if(USE_API && state.step === 2 && !state.submitted) loadTakenSlots(); }, 60000);
+
+/* ============================================================
+   أدوات مساعدة
+   ============================================================ */
+const DAY_NAMES = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+const MONTH_NAMES = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+
+function pad2(n){ return String(n).padStart(2,'0'); }
+function isSameDay(a,b){ return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate(); }
+function toIsoDate(d){ return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate()); }
+function formatDateArabic(d){ return `${DAY_NAMES[d.getDay()]}، ${d.getDate()} ${MONTH_NAMES[d.getMonth()]} ${d.getFullYear()}`; }
+function formatTime12(t){
+  const [h,m] = t.split(':').map(Number);
+  const period = h < 12 ? 'ص' : 'م';
+  let h12 = h % 12; if (h12 === 0) h12 = 12;
+  return `${h12}:${pad2(m)} ${period}`;
+}
+function escapeHtml(s){
+  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function isValidPhone(p){
+  const digits = (p||'').replace(/\D/g,'');
+  return /^(05\d{8}|5\d{8}|9665\d{8})$/.test(digits);
+}
+function getBookableDates(){
+  const days = [];
+  const today = new Date(); today.setHours(0,0,0,0);
+  for(let i=0; i<SALON.bookingWindowDays; i++){
+    const d = new Date(today); d.setDate(d.getDate()+i);
+    if(SALON.closedWeekdays.includes(d.getDay())) continue;
+    days.push(d);
+  }
+  return days;
+}
+function getHoursForDate(dateObj){ return SALON.hoursByDay[dateObj.getDay()] || null; }
+function bookingHoursText(dateObj){
+  if(!dateObj) return 'اختاري يومًا لعرض الأوقات المتاحة';
+  const hrs = getHoursForDate(dateObj);
+  if(!hrs) return 'لا توجد مواعيد متاحة في هذا اليوم';
+  return `المواعيد المتاحة من <strong>${formatTime12(minutesToTime(hrs.open))}</strong> إلى <strong>${formatTime12(minutesToTime(hrs.close))}</strong>`;
+}
+function minutesToTime(minutes){ return `${String(Math.floor(minutes / 60)).padStart(2,'0')}:${String(minutes % 60).padStart(2,'0')}`; }
+function getTimeSlotsForDate(dateObj){
+  const slots = [];
+  const hrs = getHoursForDate(dateObj);
+  if(!hrs) return slots;
+  const isToday = isSameDay(dateObj, new Date());
+  const now = new Date();
+  const nowMinutes = now.getHours()*60 + now.getMinutes() + SALON.leadTimeMinutes;
+  for(let m=hrs.open; m<=hrs.close; m+=SALON.slotInterval){
+    if(isToday && m < nowMinutes) continue;
+    slots.push(`${pad2(Math.floor(m/60))}:${pad2(m%60)}`);
+  }
+  return slots;
+}
+function slotCount(dateIso, time){ return (takenSlots[dateIso]||[]).filter(t=>t===time).length; }
+function isSlotFull(dateIso, time){ return slotCount(dateIso, time) >= SALON.maxConcurrentBookings; }
+function cartTotal(){ return state.cart.reduce((s,i)=>s+i.price, 0); }
+function findCartItem(id){ return state.cart.find(i=>i.id===id); }
+function removeCartItem(id){ state.cart = state.cart.filter(i=>i.id!==id); }
+
+/* ============================================================
+   العرض (Render)
+   ============================================================ */
+let lastStepKey = null;
+// حركة قلب خفيفة عند الانتقال بين الخطوات فقط (لا عند كل اختيار)
+function flipIfNewStep(app){
+  const key = state.submitted ? 'done' : state.step + ':' + (state.step === 1 ? state.view : '');
+  if(key === lastStepKey) return;
+  lastStepKey = key;
+  app.classList.remove('step-enter'); void app.offsetWidth; app.classList.add('step-enter');
+}
+function render(){
+  const app = document.getElementById('app');
+  // نحفظ مكان التمرير في شريط الأيام والعنصر المركَّز حتى لا يضيع مكان الزائرة عند إعادة الرسم
+  const strip = app.querySelector('.date-strip');
+  const stripLeft = strip ? strip.scrollLeft : null;
+  const active = document.activeElement;
+  const focusKey = active && active.dataset ? active.dataset.focus : null;
+
+  document.getElementById('summaryBar').innerHTML = renderSummaryBar();
+  document.getElementById('stepper').innerHTML = renderStepper();
+  if(state.submitted){ app.innerHTML = renderSuccess(); flipIfNewStep(app); saveDraft(); return; }
+  if(state.step===1) app.innerHTML = renderStep1();
+  else if(state.step===2) app.innerHTML = renderStep2();
+  else app.innerHTML = renderStep3();
+
+  flipIfNewStep(app);
+
+  const newStrip = app.querySelector('.date-strip');
+  if(newStrip && stripLeft !== null) newStrip.scrollLeft = stripLeft;
+  if(focusKey){
+    const el = app.querySelector('[data-focus="'+focusKey+'"]');
+    if(el) el.focus({ preventScroll:true });
+  }
+  saveDraft();
+}
+
+function renderStepper(){
+  const steps = ['الخدمة','الموعد','التأكيد'];
+  let html = '';
+  steps.forEach((s,i)=>{
+    const n = i+1;
+    let cls = '';
+    if(state.submitted) cls = 'done';
+    else if(n===state.step) cls = 'active';
+    else if(n<state.step) cls = 'done';
+    html += `<div class="step-dot-wrap"><div class="step-dot ${cls}">${n}</div><span class="step-label">${s}</span></div>`;
+    if(i<steps.length-1) html += '<div class="step-line"></div>';
+  });
+  return html;
+}
+
+function renderSummaryBar(){
+  if(state.cart.length===0 || state.step===1 || state.submitted) return '';
+  const names = state.cart.map(i => i.tier ? `${i.name} (${TIER_LABELS[i.tier]})` : i.name).join('، ');
+  return `<div class="mini-summary">
+    <span>${escapeHtml(names)} — <b>${cartTotal()} ريال</b></span>
+    <button onclick="goStep(1)">تغيير</button>
+  </div>`;
+}
+
+/* ---- الخطوة ١: الخدمات (يمكن اختيار أكثر من خدمة ومن أكثر من قسم) ---- */
+function renderCartBar(){
+  if(state.cart.length===0) return '';
+  return `<div class="cart-bar"><span>اخترتِ ${state.cart.length} خدمة — الإجمالي <b>${cartTotal()} ريال</b></span><button type="button" class="link-clear" onclick="clearCart()">مسح الكل</button></div>`;
+}
+function renderStep1NextButton(){
+  const label = state.cart.length ? `التالي (${state.cart.length} خدمة — ${cartTotal()} ريال)` : 'التالي';
+  return `<div class="step-actions"><button class="btn-primary" ${canProceedStep1() ? '' : 'disabled'} onclick="goStep(2)">${label}</button></div>`;
+}
+function renderStep1(){
+  const cartBar = renderCartBar();
+  if(state.view === 'categories'){
+    let cards = '';
+    Object.keys(SERVICES).forEach(key=>{
+      const cat = SERVICES[key];
+      cards += `<button class="cat-card" data-tilt="4" onclick="selectCategory('${key}')">
+        <span class="cat-label">${cat.label}</span>
+      </button>`;
+    });
+    const hasQuery = !!normAr(state.query);
+    return `<h2 class="step-title">اختاري الخدمات</h2><p class="hint center">تقدرين تختارين أكثر من خدمة، ومن أكثر من قسم</p>
+      ${lastBookingHtml()}
+      ${cartBar}
+      <div class="search-box"><input type="search" id="svcSearch" class="search-input" placeholder="ابحثي عن خدمة، مثل: صبغة أو بادكير أو مكياج" value="${escapeHtml(state.query)}" oninput="onSearchInput(this.value)" aria-label="ابحثي عن خدمة" autocomplete="off"></div>
+      <div id="searchResults">${searchResultsHtml()}</div>
+      <div class="cat-grid" id="catList" ${hasQuery ? 'hidden' : ''}>${cards}</div>${cartBar ? renderStep1NextButton() : ''}`;
+  }
+
+  const cat = SERVICES[state.categoryKey];
+  if(cat.isOffers){ return renderOffersView(cartBar); }
+
+  let groupsHtml = '';
+  cat.groups.forEach((g, gi)=>{
+    let itemsHtml = '';
+    g.items.forEach((it, ii)=>{ itemsHtml += renderServiceItem(state.categoryKey, gi, ii, it); });
+    groupsHtml += `<div class="service-group"><h3 class="group-title">${g.title}</h3>${itemsHtml}</div>`;
+  });
+
+  return `
+    <button class="link-back" onclick="backToCategories()">→ كل الفئات</button>
+    <h2 class="step-title">${cat.label}</h2>
+    ${cartBar}
+    ${groupsHtml}
+    ${renderStep1NextButton()}
+  `;
+}
+function renderServiceItem(catKey, gi, ii, it){
+  const id = `${catKey}:${gi}:${ii}`;
+  const cartItem = findCartItem(id);
+  const inCart = !!cartItem;
+  const tierOpen = state._openTierId === id;
+  const priceLabel = it.tiers ? (cartItem ? `${cartItem.price} ريال` : `من ${it.tiers.S} ريال`) : `${it.price} ريال${it.unit ? ' '+it.unit : ''}`;
+  let tiersHtml = '';
+  if(it.tiers && (tierOpen || inCart)){
+    let chips = '';
+    (it.tierKeys || ['S','M','L','XL']).forEach(t=>{
+      const active = cartItem && cartItem.tier===t;
+      chips += `<button class="tier-chip ${active?'active':''}" onclick="event.stopPropagation(); chooseTier('${catKey}', ${gi}, ${ii}, '${t}')">${TIER_LABELS[t]}<br><b>${it.tiers[t]} ر.س</b></button>`;
+    });
+    tiersHtml = `<div class="tier-row" style="grid-template-columns:repeat(${(it.tierKeys||['S','M','L','XL']).length},1fr)">${chips}</div>`;
+  }
+  const aria = it.tiers ? `role="button" aria-expanded="${tierOpen || inCart}"` : `role="checkbox" aria-checked="${inCart}"`;
+  return `<div class="service-item ${inCart?'selected':''}" ${aria} tabindex="0" data-focus="${id}" onkeydown="activateKey(event,this)" onclick="toggleService('${catKey}', ${gi}, ${ii})">
+      <span class="si-left"><span class="check-box">${inCart?'✓':''}</span><span class="service-name">${it.name}</span></span>
+      <span class="service-price">${priceLabel}</span>
+    </div>${tiersHtml}`;
+}
+function renderOffersView(cartBar){
+  const packagesHtml = SERVICES.offers.packages.map(pkg=>{
+    const id = `pkg:${pkg.id}`;
+    const active = !!findCartItem(id);
+    const includesHtml = pkg.includes.map(i=>`<li>${i}</li>`).join('');
+    return `
+      <div class="offer-card">
+        <div class="offer-price small">${pkg.title} — ${pkg.price} ريال</div>
+        <ul class="offer-includes">${includesHtml}</ul>
+        <button class="offer-option ${active?'active':''}" onclick="togglePackage('${pkg.id}')">${active ? '✓ مُضافة للسلة' : 'أضيفي هذه الباقة'}</button>
+      </div>`;
+  }).join('');
+
+  return `
+    <button class="link-back" onclick="backToCategories()">→ كل الفئات</button>
+    <h2 class="step-title">العروض</h2>
+    ${cartBar}
+    ${packagesHtml}
+    ${renderStep1NextButton()}
+  `;
+}
+
+/* ---- الخطوة ٢: التاريخ والوقت ---- */
+function renderStep2(){
+  const dates = getBookableDates();
+  const dateIso = state.date ? toIsoDate(state.date) : null;
+  let chips = '';
+  dates.forEach(d=>{
+    const iso = toIsoDate(d);
+    const active = dateIso===iso;
+    const today = isSameDay(d, new Date());
+    chips += `<button class="date-chip ${active?'active':''}" onclick="selectDate('${iso}')">
+        <span class="dc-day">${DAY_NAMES[d.getDay()]}</span>
+        <span class="dc-num">${d.getDate()}</span>
+        <span class="dc-month">${today ? 'اليوم' : MONTH_NAMES[d.getMonth()]}</span>
+      </button>`;
+  });
+
+  let timeSection = '<p class="hint">اختاري يومًا لعرض الأوقات المتاحة</p>';
+  let hoursNote = `${bookingHoursText(state.date)}<br><span class="hours-note-sub">آخر موعد ظاهر حسب يوم الحجز المختار</span>`;
+  if(USE_API){
+    hoursNote = 'تظهر الأوقات التي تناسب مدة خدماتك وتوفّر الموظفة المختصة.';
+    if(state.date){
+      const a = availFor(dateIso);
+      if(!a || a === 'loading'){
+        timeSection = '<p class="hint">جاري تحميل الأوقات المتاحة…</p>';
+      } else if(a === 'error'){
+        timeSection = `<p class="hint">تعذّر تحميل الأوقات المتاحة، تأكدي من الاتصال بالإنترنت ثم <a href="#" onclick="loadAvailability('${dateIso}', true);return false;">أعيدي المحاولة</a></p>`;
+      } else {
+        hoursNote = `مدة خدماتك التقريبية: <strong>${formatDuration(a.minutes)}</strong>. تظهر الأوقات التي تناسبها فقط.`;
+        if(!a.times.length){
+          timeSection = '<p class="hint">لا توجد أوقات متاحة لخدماتك في هذا اليوم، جرّبي يومًا آخر.</p>';
+        } else {
+          const timeChips = a.times.map(x => `<button class="time-chip ${state.time===x.t?'active':''}" onclick="selectTime('${x.t}')">${formatTime12(x.t)}</button>`).join('');
+          const sel = a.times.find(x => x.t === state.time);
+          timeSection = `<div class="time-grid">${timeChips}</div><p class="hint">${sel ? `تبدأ ${formatTime12(sel.t)} وتنتهي حوالي ${formatTime12(sel.end)}.` : 'اختاري وقت البداية المناسب لكِ.'}</p>`;
+        }
+      }
+    }
+  } else if(state.date && !slotsLoaded){
+    timeSection = slotsLoadFailed
+      ? '<p class="hint">تعذّر تحميل الأوقات المتاحة، تأكدي من الاتصال بالإنترنت ثم <a href="#" onclick="slotsLoadFailed=false;render();loadTakenSlots();return false;">أعيدي المحاولة</a></p>'
+      : '<p class="hint">جاري تحميل الأوقات المتاحة…</p>';
+  } else if(state.date){
+    const slots = getTimeSlotsForDate(state.date);
+    const iso = toIsoDate(state.date);
+    if(slots.length===0){
+      timeSection = '<p class="hint">لا توجد أوقات متاحة في هذا اليوم، جرّبي يومًا آخر.</p>';
+    } else {
+      let timeChips = '';
+      slots.forEach(t=>{
+        const full = isSlotFull(iso, t);
+        const active = state.time===t;
+        timeChips += `<button class="time-chip ${active?'active':''} ${full?'taken':''}" ${full?'disabled':''} onclick="selectTime('${t}')">${formatTime12(t)}</button>`;
+      });
+      timeSection = `<div class="time-grid">${timeChips}</div><p class="hint">المواعيد بفاصل 30 دقيقة، والأوقات المشطوبة محجوزة مسبقًا.</p>`;
+    }
+  }
+
+  return `
+    <button class="link-back" onclick="goStep(1)">→ تغيير الخدمة</button>
+    <h2 class="step-title">اختاري اليوم والوقت</h2>
+    <button type="button" class="btn-ghost btn-sm earliest-btn" onclick="pickEarliest()">اختاري أقرب موعد متاح</button>
+    <p class="hours-note">${hoursNote}</p>
+    ${state.slotMsg ? `<p class="slot-msg" role="status">${escapeHtml(state.slotMsg)}</p>` : ''}
+    <div class="date-strip">${chips}</div>
+    ${timeSection}
+    <div class="step-actions">
+      <button class="btn-primary" ${canProceedStep2()?'':'disabled'} onclick="goStep(3)">التالي</button>
+    </div>
+  `;
+}
+
+/* ---- الخطوة ٣: البيانات والتأكيد ---- */
+function renderPaymentInfo(){
+  const b = SALON.bank;
+  if(!b) return '';
+  return `
+    <div class="payment-card">
+      <h3 class="payment-title">بيانات الدفع — تحويل بنكي</h3>
+      <p class="payment-sub">تقدرين تحوّلين قيمة الحجز مسبقًا عبر الحساب التالي</p>
+      <div class="pay-row">
+        <div class="pay-row-text"><span class="pay-label">البنك</span><span class="pay-value">${escapeHtml(b.bankName)}</span></div>
+      </div>
+      <div class="pay-row">
+        <div class="pay-row-text"><span class="pay-label">اسم الحساب</span><span class="pay-value">${escapeHtml(b.accountName)}</span></div>
+      </div>
+      <div class="pay-row">
+        <div class="pay-row-text"><span class="pay-label">رقم الحساب</span><span class="pay-value">${escapeHtml(b.accountNumber)}</span></div>
+        <button type="button" class="copy-btn" onclick="copyPaymentValue(this, '${b.accountNumber}')">نسخ</button>
+      </div>
+      <div class="pay-row">
+        <div class="pay-row-text"><span class="pay-label">رقم الآيبان (IBAN)</span><span class="pay-value">${escapeHtml(b.iban)}</span></div>
+        <button type="button" class="copy-btn" onclick="copyPaymentValue(this, '${b.iban}')">نسخ</button>
+      </div>
+      <p class="payment-note">بعد التحويل، تقدرين ترسلين إيصال التحويل مع رسالة التأكيد على واتساب لتثبيت الحجز.</p>
+    </div>
+  `;
+}
+function copyPaymentValue(btn, value){
+  const done = () => {
+    const original = btn.textContent;
+    btn.textContent = '✓ تم النسخ';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent = original; btn.classList.remove('copied'); }, 1500);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(value).then(done).catch(()=>fallbackCopy(value, done));
+  } else {
+    fallbackCopy(value, done);
+  }
+}
+function fallbackCopy(value, done){
+  const ta = document.createElement('textarea');
+  ta.value = value; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
+  done();
+}
+function timeRangeText(){
+  let end = state.endTime;
+  if(!end && USE_API && state.date){
+    const a = availFor(toIsoDate(state.date));
+    const x = a && a.times && a.times.find(t => t.t === state.time);
+    if(x) end = x.end;
+  }
+  return end ? `${formatTime12(state.time)} – ${formatTime12(end)}` : formatTime12(state.time);
+}function removeFromSummary(id){
+  removeCartItem(id);
+  if(!state.cart.length){ state.step = 1; state.view = 'categories'; }
+  render();
+}
+function validateField(field){
+  if(field === 'name'){
+    showFieldError('name', state.name.trim() ? '' : 'الرجاء إدخال الاسم');
+  } else if(field === 'phone'){
+    showFieldError('phone', (!state.phone.trim() || isValidPhone(state.phone)) ? '' : 'رقم جوال سعودي غير صحيح (مثال: 0512345678)');
+  }
+}
+function renderStep3(){
+  const rows = state.cart.map(i=>{
+    const label = i.tier ? `${escapeHtml(i.name)} (${TIER_LABELS[i.tier]})` : escapeHtml(i.name);
+    return `<div class="sc-row"><span>${label}</span><div class="sc-end"><b>${i.price} ريال</b><button type="button" class="sc-remove" onclick="removeFromSummary('${i.id}')" aria-label="إزالة ${label}">إزالة</button></div></div>`;
+  }).join('');
+  return `
+    <button class="link-back" onclick="goStep(2)">→ تغيير الموعد</button>
+    <h2 class="step-title">بيانات الحجز</h2>
+    <div class="summary-card">
+      ${rows}
+      <div class="sc-row sc-total"><span>الإجمالي</span><b>${cartTotal()} ريال</b></div>
+      <div class="sc-row"><span>التاريخ</span><b>${formatDateArabic(state.date)}</b></div>
+      <div class="sc-row"><span>الوقت</span><b>${timeRangeText()}</b></div>
+    </div>
+    <div class="field">
+      <label>الاسم الكامل</label>
+      <input type="text" id="inpName" value="${escapeHtml(state.name)}" oninput="updateField('name',this.value)" onblur="validateField('name')" placeholder="مثال: سارة أحمد" autocomplete="name" aria-describedby="err-name">
+      <span class="field-error" id="err-name"></span>
+    </div>
+    <div class="field">
+      <label>رقم الجوال (واتساب)</label>
+      <input type="tel" id="inpPhone" value="${escapeHtml(state.phone)}" oninput="updateField('phone',this.value)" onblur="validateField('phone')" placeholder="05XXXXXXXX" inputmode="tel" autocomplete="tel" dir="ltr" style="text-align:right" aria-describedby="err-phone">
+      <span class="field-error" id="err-phone"></span>
+    </div>
+    <div class="field">
+      <label>ملاحظات (اختياري)</label>
+      <textarea rows="3" oninput="updateField('notes',this.value)" placeholder="مثال: عندي أكثر من خدمة، أو لون معيّن...">${escapeHtml(state.notes)}</textarea>
+    </div>
+    ${renderPaymentInfo()}
+    <div class="step-actions">
+      <button class="btn-confirm" ${state.submitting?'disabled':''} onclick="confirmBooking()">${state.submitting ? 'جاري تثبيت موعدك…' : 'تأكيد الحجز عبر واتساب'}</button>
+    </div>
+    ${state.submitError ? `<p class="slot-msg">${escapeHtml(state.submitError)}</p>` : ''}
+    <p class="hint center">بالضغط على تأكيد، سيُفتح واتساب برسالة حجزك جاهزة — فقط اضغطي إرسال لإتمام الحجز</p>
+  `;
+}
+
+/* ---- شاشة النجاح ---- */
+function renderSuccess(){
+  const rows = state.cart.map(i=>{
+    const label = i.tier ? `${escapeHtml(i.name)} (${TIER_LABELS[i.tier]})` : escapeHtml(i.name);
+    return `<div class="sc-row"><span>${label}</span><b>${i.price} ريال</b></div>`;
+  }).join('');
+  return `
+    <div class="success">
+      <div class="success-icon">✓</div>
+      <h2>تم تجهيز حجزك</h2>
+      <p class="hint center">لو ما فتح واتساب تلقائيًا، اضغطي الزر أدناه لإرسال رسالة التأكيد</p>
+      <div class="summary-card">
+        ${rows}
+        <div class="sc-row sc-total"><span>الإجمالي</span><b>${cartTotal()} ريال</b></div>
+        <div class="sc-row"><span>التاريخ</span><b>${formatDateArabic(state.date)}</b></div>
+        <div class="sc-row"><span>الوقت</span><b>${timeRangeText()}</b></div>
+        <div class="sc-row"><span>الاسم</span><b>${escapeHtml(state.name)}</b></div>
+      </div>
+      <button class="btn-secondary" onclick="openWhatsAppAgain()">فتح واتساب لإرسال التأكيد</button>
+      <button class="btn-secondary" onclick="downloadIcs()">إضافة تذكير بالموعد إلى التقويم</button>
+      <button class="btn-primary" onclick="resetBooking()">حجز موعد آخر</button>
+    </div>
+  `;
+}
+
+/* ============================================================
+   أحداث المستخدم
+   ============================================================ */
+function selectCategory(key){ state.categoryKey = key; state.view = 'services'; render(); scrollTopSoft(); }
+function backToCategories(){ state.view = 'categories'; render(); scrollTopSoft(); }
+
+function toggleService(catKey, gi, ii){
+  const it = SERVICES[catKey].groups[gi].items[ii];
+  const id = `${catKey}:${gi}:${ii}`;
+  if(it.tiers){
+    state._openTierId = (state._openTierId === id) ? null : id;
+    render();
+    return;
+  }
+  if(findCartItem(id)) removeCartItem(id);
+  else state.cart.push({ id, name: it.name, price: it.price, tier: null });
+  render();
+}
+function chooseTier(catKey, gi, ii, t){
+  const it = SERVICES[catKey].groups[gi].items[ii];
+  const id = `${catKey}:${gi}:${ii}`;
+  const existing = findCartItem(id);
+  if(existing && existing.tier === t){
+    removeCartItem(id);
+  } else if(existing){
+    existing.tier = t; existing.price = it.tiers[t];
+  } else {
+    state.cart.push({ id, name: it.name, price: it.tiers[t], tier: t });
+  }
+  render();
+}
+function togglePackage(pkgId){
+  const pkg = SERVICES.offers.packages.find(p=>p.id===pkgId);
+  const id = `pkg:${pkgId}`;
+  if(findCartItem(id)) removeCartItem(id);
+  else state.cart.push({ id, name: pkg.title, price: pkg.price, tier: null });
+  render();
+}
+function canProceedStep1(){ return state.cart.length > 0; }
+
+function selectDate(iso){
+  const [y,m,d] = iso.split('-').map(Number);
+  state.date = new Date(y, m-1, d);
+  state.time = null;
+  state.slotMsg = '';
+  render();
+  if(USE_API) loadAvailability(iso, true); else loadTakenSlots();
+}
+function selectTime(t){
+  const iso = toIsoDate(state.date);
+  if(USE_API){
+    const a = availFor(iso);
+    if(!a || !a.times || !a.times.some(x => x.t === t)) return;
+  } else if(isSlotFull(iso, t)) return;
+  state.time = t; state.slotMsg = ''; render();
+}
+function canProceedStep2(){ return !!state.date && !!state.time; }
+
+function goStep(n){ state.step = n; state.submitError = ''; if(n !== 2) state.slotMsg = ''; render(); scrollTopSoft(); if(n === 2){ if(USE_API && state.date) loadAvailability(toIsoDate(state.date), true); else loadTakenSlots(); } }
+function scrollTopSoft(){ window.scrollTo({top:0, behavior:'smooth'}); }
+
+function updateField(name, value){ state[name] = value; } // بدون إعادة رسم حتى لا يفقد التركيز أثناء الكتابة
+
+function showFieldError(field, msg){
+  const el = document.getElementById('err-'+field);
+  if(el) el.textContent = msg;
+}
+function clearFieldErrors(){ ['name','phone'].forEach(f=>showFieldError(f,'')); }
+
+function buildWaMessage(){
+  const notes = state.notes.trim() || 'لا يوجد';
+  const servicesText = state.cart.map(i=>{
+    const label = i.tier ? `${i.name} (${TIER_LABELS[i.tier]})` : i.name;
+    return `- ${label} — ${i.price} ريال`;
+  }).join('\n');
+  return `حجز جديد – ${SALON.name}\n` +
+    `الاسم: ${state.name.trim()}\n` +
+    `الجوال: ${state.phone.trim()}\n` +
+    `الخدمات:\n${servicesText}\n` +
+    `الإجمالي: ${cartTotal()} ريال\n` +
+    `التاريخ: ${formatDateArabic(state.date)}\n` +
+    `الوقت: ${formatTime12(state.time)}\n` +
+    `ملاحظات: ${notes}\n\n` +
+    `تم الحجز عبر صفحة الحجز الإلكترونية`;
+}
+
+async function confirmBooking(){
+  if(state.submitting) return;
+  clearFieldErrors();
+  let ok = true;
+  if(!state.name.trim()){ showFieldError('name','الرجاء إدخال الاسم'); ok = false; }
+  if(!isValidPhone(state.phone)){ showFieldError('phone','رقم جوال سعودي غير صحيح (مثال: 0512345678)'); ok = false; }
+  if(!ok) return;
+
+  const dateIso = toIsoDate(state.date);
+  const waUrl = `https://wa.me/${SALON.whatsapp}?text=${encodeURIComponent(buildWaMessage())}`;
+  const servicesText = state.cart.map(i => i.tier ? `${i.name} (${TIER_LABELS[i.tier]})` : i.name).join(' + ');
+
+  if(USE_API){
+    // نفتح نافذة واتساب فورًا (عشان المتصفح ما يحجبها) ونوجّهها بعد تثبيت الموعد
+    let waWin = null;
+    try{ waWin = window.open('', '_blank'); }catch(e){}
+    state.submitting = true; state.submitError = ''; render();
+    let result = null;
+    try{
+      const res = await fetch(SALON.bookingApiUrl, {
+        method: 'POST',
+        body: JSON.stringify({
+          action: 'book', date: dateIso, time: state.time,
+          name: state.name.trim(), phone: state.phone.trim(),
+          services: servicesText, total: cartTotal(), notes: state.notes.trim(),
+          items: state.cart.map(i => ({ id: i.id, tier: i.tier }))
+        })
+      });
+      result = await res.json();
+    }catch(e){ result = null; }
+    state.submitting = false;
+
+    if(!result || (!result.ok && result.reason !== 'taken')){
+      if(waWin) waWin.close();
+      state.submitError = result && result.reason === 'busy'
+        ? 'لديك حجوزات كثيرة قادمة، تواصلي مع الصالون لإتمام الحجز.'
+        : 'تعذّر تثبيت الموعد، تأكدي من الاتصال بالإنترنت وحاولي مرة ثانية';
+      render();
+      return;
+    }
+    if(!result.ok){ // الموعد انحجز من زبونة ثانية قبل لحظات
+      if(waWin) waWin.close();
+      if(result.times) availCache[cartKey() + '|' + dateIso] = { times: result.times, minutes: result.minutes || 0 };
+      state.time = null;
+      state.slotMsg = 'هذا الوقت حُجز للتو، اختاري وقتًا آخر.';
+      goStep(2);
+      return;
+    }
+    state.endTime = result.end || null;
+    lastWaUrl = waUrl;
+    if(waWin){ waWin.location.href = waUrl; } else { try{ window.open(waUrl, '_blank'); }catch(e){} }
+  } else {
+    if(!takenSlots[dateIso]) takenSlots[dateIso] = [];
+    takenSlots[dateIso].push(state.time);
+    localStorage.setItem('ann_taken_slots', JSON.stringify(takenSlots));
+    lastWaUrl = waUrl;
+    window.open(lastWaUrl, '_blank');
+  }
+
+  const bookings = JSON.parse(localStorage.getItem('ann_my_bookings') || '[]');
+  bookings.push({
+    services: state.cart, total: cartTotal(),
+    date: dateIso, time: state.time, end: state.endTime || null, name: state.name, phone: state.phone,
+    notes: state.notes, createdAt: new Date().toISOString()
+  });
+  localStorage.setItem('ann_my_bookings', JSON.stringify(bookings));
+  localStorage.setItem('ann_client_info', JSON.stringify({ name: state.name, phone: state.phone }));
+
+  state.submitted = true;
+  render();
+  scrollTopSoft();
+}
+function openWhatsAppAgain(){ if(lastWaUrl) window.open(lastWaUrl, '_blank'); }
+
+function resetBooking(){
+  state = {
+    view:'categories', categoryKey:null, cart:[], _openTierId:null,
+    date:null, time:null, name:state.name, phone:state.phone, notes:'',
+    step:1, submitted:false, submitting:false, slotMsg:'', submitError:'', query:''
+  };
+  render();
+  scrollTopSoft();
+}
+
+/* ============================================================
+   التحقق من الحجز: الاسم الأول + رقم الجوال فقط
+   - بدون سيرفر (bookingApiUrl فارغ): يبحث في الحجوزات المحفوظة على هذا الجهاز.
+   - مع سيرفر: يطلب أيضًا من Google Apps Script:
+       GET  bookingApiUrl?action=lookup&phone=<رقم>&name=<الاسم الأول>
+       رد متوقّع: { ok:true, bookings:[{ date:'YYYY-MM-DD', time:'HH:MM', services:'نص', total:123 }] }
+     (لا يُعاد رقم الجوال ولا الملاحظات؛ فقط الموعد والخدمات)
+   ============================================================ */
+function phoneKey(p){ return (p||'').replace(/\D/g,'').slice(-9); }
+function firstNameKey(n){ return normAr((n||'').trim().split(/\s+/)[0] || ''); }
+
+function localBookingsFor(name, phone){
+  let list = [];
+  try{ list = JSON.parse(localStorage.getItem('ann_my_bookings') || '[]'); }catch(e){}
+  const pk = phoneKey(phone), nk = firstNameKey(name);
+  return list.filter(b => b && phoneKey(b.phone) === pk && firstNameKey(b.name) === nk).map(b => ({
+    date: b.date, time: b.time, total: b.total,
+    services: Array.isArray(b.services)
+      ? b.services.map(i => i.tier ? `${i.name} (${TIER_LABELS[i.tier]})` : i.name)
+      : []
+  }));
+}
+async function remoteBookingsFor(name, phone){
+  if(!USE_API) return { list: [], failed: false };
+  try{
+    const url = SALON.bookingApiUrl + '?action=lookup&phone=' + encodeURIComponent(phoneKey(phone)) +
+      '&name=' + encodeURIComponent((name||'').trim().split(/\s+/)[0]) + '&t=' + Date.now();
+    const res = await fetch(url);
+    const data = await res.json();
+    if(!data || !data.ok || !Array.isArray(data.bookings)) throw new Error('bad response');
+    return { failed: false, list: data.bookings.map(b => ({
+      date: b.date, time: b.time, total: b.total, status: b.status,
+      services: Array.isArray(b.services) ? b.services : (b.services ? String(b.services).split(/\s*\+\s*/) : [])
+    })) };
+  }catch(e){ return { list: [], failed: true }; }
+}
+function bookingStart(b){
+  const [y,m,d] = String(b.date).split('-').map(Number);
+  const [h,mi] = String(b.time).split(':').map(Number);
+  return new Date(y, (m||1)-1, d||1, h||0, mi||0);
+}
+function renderBookingCard(b, name, phone){
+  const cancelled = b.status === 'cancelled';
+  const upcoming = !cancelled && bookingStart(b) >= new Date();
+  const badgeText = cancelled ? 'ملغي'
+    : b.status === 'confirmed' && upcoming ? 'مؤكد'
+    : b.status === 'new' && upcoming ? 'بانتظار تأكيد الصالون'
+    : upcoming ? 'موعد قادم' : 'موعد سابق';
+  const [y,m,d] = String(b.date).split('-').map(Number);
+  const dateText = formatDateArabic(new Date(y, m-1, d));
+  const items = (b.services || []).map(s => `<li>${escapeHtml(s)}</li>`).join('');
+  const msg = `السلام عليكم، أرغب بالاستفسار عن/تعديل حجزي\nالاسم: ${(name||'').trim()}\nالجوال: ${(phone||'').trim()}\nالتاريخ: ${dateText}\nالوقت: ${formatTime12(b.time)}`;
+  const wa = `https://wa.me/${SALON.whatsapp}?text=${encodeURIComponent(msg)}`;
+  return `<div class="bk-card">
+    <div class="bk-head"><div><div class="bk-date">${dateText}</div><div class="bk-time">الساعة ${formatTime12(b.time)}</div></div><span class="bk-badge ${upcoming?'':'past'}">${badgeText}</span></div>
+    ${items ? `<ul class="bk-services">${items}</ul>` : ''}
+    ${b.total != null && b.total !== '' ? `<p class="bk-total">الإجمالي: <b>${escapeHtml(String(b.total))} ريال</b></p>` : ''}
+    ${upcoming ? `<div class="bk-actions"><a class="btn-ghost btn-sm" href="${wa}" target="_blank" rel="noopener">تعديل أو إلغاء عبر واتساب</a></div>` : ''}
+  </div>`;
+}
+async function lookupBooking(e){
+  if(e) e.preventDefault();
+  const name = document.getElementById('chkName').value;
+  const phone = document.getElementById('chkPhone').value;
+  const err = document.getElementById('err-chk');
+  const out = document.getElementById('checkResult');
+  const btn = document.getElementById('chkBtn');
+  err.textContent = '';
+  if(!name.trim()){ err.textContent = 'الرجاء إدخال الاسم الأول'; return false; }
+  if(!isValidPhone(phone)){ err.textContent = 'رقم جوال سعودي غير صحيح (مثال: 0512345678)'; return false; }
+
+  btn.disabled = true; btn.textContent = 'جاري البحث…'; out.innerHTML = '';
+  const remote = await remoteBookingsFor(name, phone);
+  const seen = new Set();
+  const all = remote.list.concat(localBookingsFor(name, phone)).filter(b => {
+    const k = b.date + '|' + b.time;
+    if(seen.has(k)) return false;
+    seen.add(k); return true;
+  });
+  btn.disabled = false; btn.textContent = 'عرض حجزي';
+
+  const now = new Date();
+  const upcoming = all.filter(b => b.status !== 'cancelled' && bookingStart(b) >= now).sort((a,b)=>bookingStart(a)-bookingStart(b));
+  const past = all.filter(b => b.status === 'cancelled' || bookingStart(b) < now).sort((a,b)=>bookingStart(b)-bookingStart(a));
+  const shown = upcoming.concat(past).slice(0, 6);
+
+  let html = '';
+  if(remote.failed) html += '<p class="check-note">تعذّر الاتصال بالسيرفر، والنتائج التالية من هذا الجهاز فقط.</p>';
+  if(shown.length){
+    html += shown.map(b => renderBookingCard(b, name, phone)).join('');
+    html += '<p class="check-note">الحجز يُعتمد بعد تأكيد الصالون على واتساب.</p>';
+  } else {
+    const msg = `السلام عليكم، أرغب بالاستفسار عن حجزي\nالاسم: ${name.trim()}\nالجوال: ${phone.trim()}`;
+    html += `<div class="check-empty">لم نجد حجزًا بهذه البيانات${USE_API ? '' : ' على هذا الجهاز'}. تأكدي من كتابة الاسم الأول والرقم كما في الحجز، أو
+      <a href="https://wa.me/${SALON.whatsapp}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">تواصلي مع الصالون عبر واتساب</a>
+      أو اتصلي على <a href="tel:${SALON.phoneDisplay}" dir="ltr">${SALON.phoneDisplay}</a>.</div>`;
+  }
+  out.innerHTML = html;
+  return false;
+}
+(function prefillCheck(){
+  if(!savedClient) return;
+  const n = document.getElementById('chkName'), p = document.getElementById('chkPhone');
+  if(n && savedClient.name) n.value = savedClient.name.trim().split(/\s+/)[0];
+  if(p && savedClient.phone) p.value = savedClient.phone;
+})();
+
+/* ============================================================
+   بدء التشغيل
+   ============================================================ */
+document.getElementById('mapsLink').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(SALON.mapsQuery);
+document.getElementById('waFloat').href = 'https://wa.me/' + SALON.whatsapp + '?text=' + encodeURIComponent('السلام عليكم، أرغب بالاستفسار – ' + SALON.name);
+/* ============================================================
+   حركة ثلاثية الأبعاد خفيفة: ميل عند تحريك المؤشر، ظهور تدريجي عند التمرير، لآلئ عائمة
+   (تتوقف تلقائيًا لمن فعّل "تقليل الحركة" في جهازه)
+   ============================================================ */
+(function init3D(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    reveals.forEach(el => io.observe(el));
+    // شبكة أمان: لو لم يعمل المراقب لأي سبب نكشف العناصر الظاهرة في الشاشة عند التمرير أو بعد لحظات
+    const sweep = () => reveals.forEach(el => {
+      if(!el.classList.contains('in') && el.getBoundingClientRect().top < window.innerHeight * 0.94) el.classList.add('in');
+    });
+    let sweepRaf = 0;
+    window.addEventListener('scroll', () => { cancelAnimationFrame(sweepRaf); sweepRaf = requestAnimationFrame(sweep); }, { passive: true });
+    setTimeout(sweep, 1200);
+  }
+  if(reduce || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return; // الميل للشاشات بمؤشر فقط
+
+  let raf = 0;
+  document.addEventListener('pointermove', e => {
+    const t = e.target.closest ? e.target.closest('[data-tilt]') : null;
+    const hero = e.target.closest ? e.target.closest('.hero') : null;
+    if(!t && !hero) return;
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      if(t){
+        const r = t.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        const max = parseFloat(t.dataset.tilt) || 8;
+        t.style.setProperty('--rx', (-y * max).toFixed(2) + 'deg');
+        t.style.setProperty('--ry', (x * max).toFixed(2) + 'deg');
+        t.classList.add('tilting');
+      }
+      if(hero){
+        const stage = hero.querySelector('.hero-logo');
+        if(stage){
+          const r = hero.getBoundingClientRect();
+          stage.style.setProperty('--mx', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+          stage.style.setProperty('--my', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+        }
+      }
+    });
+  }, { passive: true });
+  document.addEventListener('pointerout', e => {
+    const t = e.target.closest ? e.target.closest('[data-tilt]') : null;
+    if(!t || (e.relatedTarget && t.contains(e.relatedTarget))) return;
+    t.style.setProperty('--rx', '0deg'); t.style.setProperty('--ry', '0deg'); t.classList.remove('tilting');
+  });
+})();
+
+restoreDraft();
+render();
+loadTakenSlots();
+</script>
+</body>
+</html>
