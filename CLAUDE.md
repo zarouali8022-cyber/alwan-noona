@@ -31,3 +31,4 @@
 ## طريقة العمل
 - النسخة المحلية للعمل: `C:\Users\yassi\Downloads\alwan-noona` (مستودع Git). عدّلي هناك ثم `git add` و`git commit` و`git push origin main`؛ GitHub Pages ينشر تلقائياً خلال دقيقة.
 - بعد كل دفع تحققي من الموقع المنشور (مقارنة الملف المنشور بالمحلي) قبل أن تقولي إنه تم.
+- العروض (pkg:...) تُعرَّف في SERVICES.offers.packages داخل index.html ومعها صف في service_catalog (components = الخدمات التي تتكوّن منها زيارة العرض). بعض العروض تقتصر على أيام: في الموقع الحقل days (0=الأحد…6=السبت) وفي الجدول العمود llowed_days؛ يجب أن يتطابقا.
