@@ -3,8 +3,8 @@
 موقع حجز عربي (RTL) للجوال أولاً + لوحة إدارة. **ملفان فقط**: `index.html` (الموقع) و`admin.html` (اللوحة)، وفي `assets/` الشعار.
 لا يوجد بناء (build) ولا مكتبات: HTML + CSS + JavaScript عادي. النشر: أي تعديل يُدفع إلى فرع `main` ينشره GitHub Pages خلال دقيقة.
 
-- الموقع: https://zarouali8022-cyber.github.io/alwan-noona/
-- اللوحة: https://zarouali8022-cyber.github.io/alwan-noona/admin.html
+- الموقع: https://alwannoona.randevo.date/ (النطاق مضبوط عبر ملف CNAME وسجل CNAME في Cloudflare؛ لا تحذفيه)
+- اللوحة: https://alwannoona.randevo.date/admin.html
 
 ## قواعد صاحبة الصالون (التزمي بها دائماً)
 - عربي RTL، الجوال أولاً. الأولوية للحجز: الخدمة ← اليوم والوقت ← البيانات ← تأكيد واتساب.
