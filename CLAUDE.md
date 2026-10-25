@@ -17,11 +17,11 @@
 
 ## الخلفية (Supabase، مشروع `nfhrhftqptnchspncsfi`)
 - الجداول: `bookings`, `booking_items`, `staff_members`, `service_catalog`, `skills`, `settings`, `closures`, `profiles`.
-- دالة `booking-api` (عامة): `availability`, `earliest`, `lookup`, `book`, و`manual_book` (للموظفات بتوكن). تحسب الأوقات حسب الموظفة المختصة ومدة كل خدمة.
+- دالة `booking-api` (عامة): `availability`, `earliest`, `lookup`, `book`, و`manual_book` (للموظفات بتوكن).
 - دالة `staff-auth`: دخول الموظفات بالاسم + رمز من 6 أرقام (قفل بعد 5 محاولات خاطئة).
-- التوزيع: خدمات القسم الواحد وراء بعض، والشعر مع الأظافر بالتوازي (`settings.parallel_pairs`).
+- نموذج الحجز المبسّط: الحجز = زيارة واحدة مدتها `settings.visit_minutes` (60 دقيقة) لكل الخدمات معاً، والحد الأقصى للحجوزات المتزامنة `settings.capacity` (تُعدَّل من اللوحة ← الإعدادات). لا توزيع على موظفات. جداول الموظفات القديمة (`staff_members`, `skills`, `parallel_pairs`...) موجودة لكنها غير مستخدمة.
 - أرقام الخدمات في الموقع (`hair:0:1` ...) = ترتيبها داخل `SERVICES` في `index.html`، وتطابق `service_catalog.id`. **لا تغيّري ترتيب الخدمات أو تحذفي منها** دون تحديث الجدول، وأي خدمة جديدة يجب إضافتها للجدول (اختصاص + مدة).
-- المدد في `service_catalog` تقديرية وتُعدَّل من اللوحة (تبويب «الخدمات والمدد»). الموظفات ودوامهن وإجازاتهن من تبويب «فريق العمل».
+- العروض معرّفة في `SERVICES.offers.packages` ويقابلها صفوف `pkg:<id>` في `service_catalog`؛ `days` في الموقع = `allowed_days` في الجدول (أيام يتاح فيها العرض). يجب أن يتطابق المعرّف في الاثنين.
 - تعديلات الخلفية (SQL أو الدوال) تتم عبر ربط Supabase وليس بهذا المستودع.
 
 ## التحقق قبل الدفع
