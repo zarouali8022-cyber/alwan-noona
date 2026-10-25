@@ -1184,11 +1184,11 @@ function renderStep2(){
   let timeSection = '<p class="hint">اختاري يومًا لعرض الأوقات المتاحة</p>';
   let hoursNote = `${bookingHoursText(state.date)}<br><span class="hours-note-sub">آخر موعد ظاهر حسب يوم الحجز المختار</span>`;
   if(USE_API){
-    hoursNote = 'تظهر الأوقات التي تناسب مدة خدماتك وتوفّر الموظفة المختصة.';
-    if(allowedDays){
-      const names = DAY_NAMES.filter((n, i) => allowedDays.includes(i));
-      hoursNote += `<br><span class="hours-note-sub">العرض المختار متاح أيام: ${names.join('، ')} فقط.</span>`;
-    }
+    hoursNote = 'تُنفَّذ كل خدماتك معاً في زيارة واحدة، وتظهر الأوقات المتاحة للحجز.';
+    const daysNote = allowedDays
+      ? `<br><span class="hours-note-sub">العرض المختار متاح أيام: ${DAY_NAMES.filter((n, i) => allowedDays.includes(i)).join('، ')} فقط.</span>`
+      : '';
+    hoursNote += daysNote;
     if(state.date){
       const a = availFor(dateIso);
       if(!a || a === 'loading'){
@@ -1196,9 +1196,9 @@ function renderStep2(){
       } else if(a === 'error'){
         timeSection = `<p class="hint">تعذّر تحميل الأوقات المتاحة، تأكدي من الاتصال بالإنترنت ثم <a href="#" onclick="loadAvailability('${dateIso}', true);return false;">أعيدي المحاولة</a></p>`;
       } else {
-        hoursNote = `مدة خدماتك التقريبية: <strong>${formatDuration(a.minutes)}</strong>. تظهر الأوقات التي تناسبها فقط.`;
+        hoursNote = `مدة زيارتك التقريبية: <strong>${formatDuration(a.minutes)}</strong>، وتُنفَّذ كل خدماتك معاً.` + daysNote;
         if(!a.times.length){
-          timeSection = '<p class="hint">لا توجد أوقات متاحة لخدماتك في هذا اليوم، جرّبي يومًا آخر.</p>';
+          timeSection = '<p class="hint">لا توجد أوقات متاحة في هذا اليوم، جرّبي يومًا آخر.</p>';
         } else {
           const timeChips = a.times.map(x => `<button class="time-chip ${state.time===x.t?'active':''}" onclick="selectTime('${x.t}')">${formatTime12(x.t)}</button>`).join('');
           const sel = a.times.find(x => x.t === state.time);

@@ -365,7 +365,7 @@ function renderPending(){
 function renderShell(){
   const root = $('#root'); root.replaceChildren();
   const tabs = [['day', 'اليوم'], ['upcoming', 'القادمة'], ['all', 'كل الحجوزات']];
-  if(isOwner()) tabs.push(['team', 'فريق العمل'], ['services', 'الخدمات والمدد'], ['stats', 'الإحصائيات'], ['settings', 'الإعدادات'], ['staff', 'حسابات الدخول']);
+  if(isOwner()) tabs.push(['stats', 'الإحصائيات'], ['settings', 'الإعدادات'], ['staff', 'حسابات الدخول']);
   root.append(
     h('header', { class: 'topbar' }, h('div', { class: 'wrap topbar-in' },
       h('div', { class: 'brand' }, h('img', { src: 'assets/alwan-noona-logo-web.jpg', alt: '' }), h('span', null, 'إدارة الحجوزات')),
@@ -399,6 +399,7 @@ function bookingCard(b, showDate){
   const act = [];
   const its = (b.booking_items || []).slice().sort((x, y) => x.start_min - y.start_min);
   const endMin = its.length ? Math.max(...its.map(i => i.end_min)) : null;
+  const hasStaff = its.some(i => i.staff_members); // الحجوزات القديمة فقط كانت موزّعة على موظفات
   const st = (label, status, cls, ask) => h('button', { class: 'btn btn-sm ' + (cls || ''), onclick: () => {
     if(ask && !confirm(ask)) return; setStatus(b.id, status); } }, label);
   if(b.status === 'new') act.push(st('تأكيد', 'confirmed', 'btn-ok'), st('إلغاء', 'cancelled', 'btn-danger', 'إلغاء هذا الحجز؟'));
@@ -415,8 +416,8 @@ function bookingCard(b, showDate){
     h('div', { class: 'bk-name' }, b.name),
     its.length
       ? h('ul', { class: 'items-list' }, its.map(i => h('li', null,
-          h('span', null, i.service_name + '  ', h('small', { class: 'muted' }, fmtTime(minToTime(i.start_min)) + ' – ' + fmtTime(minToTime(i.end_min)))),
-          h('span', { class: 'who2' }, i.staff_members ? i.staff_members.name : '—'))))
+          h('span', null, i.service_name + (hasStaff ? '  ' : ''), hasStaff ? h('small', { class: 'muted' }, fmtTime(minToTime(i.start_min)) + ' – ' + fmtTime(minToTime(i.end_min))) : null),
+          hasStaff ? h('span', { class: 'who2' }, i.staff_members ? i.staff_members.name : '—') : null)))
       : h('p', { class: 'bk-svc' }, b.services_text),
     h('div', { class: 'bk-meta' },
       h('span', { class: 'ltr' }, b.phone), h('span', null, 'الإجمالي: ' + Number(b.total) + ' ريال'),
@@ -446,11 +447,10 @@ function dayToolbar(v){
     h('button', { class: 'btn btn-sm', onclick: () => { S.day = addDays(S.day, -1); viewDay(v); } }, 'اليوم السابق'),
     picker,
     h('button', { class: 'btn btn-sm', onclick: () => { S.day = addDays(S.day, 1); viewDay(v); } }, 'اليوم التالي'),
-    S.day !== todayStr() ? h('button', { class: 'btn btn-sm', onclick: () => { S.day = todayStr(); viewDay(v); } }, 'اليوم') : null,
-    h('div', { class: 'seg', role: 'group', 'aria-label': 'طريقة العرض' }, mode('bookings', 'حسب الحجز'), mode('staff', 'حسب الموظفة')));
+    S.day !== todayStr() ? h('button', { class: 'btn btn-sm', onclick: () => { S.day = todayStr(); viewDay(v); } }, 'اليوم') : null);
 }
 async function viewDay(v){
-  return S.dayMode === 'staff' ? viewDayByStaff(v) : viewDayByBooking(v);
+  return viewDayByBooking(v);
 }
 // جدول اليوم لكل موظفة: من تخدم ومتى، ومن في إجازة
 async function viewDayByStaff(v){
@@ -602,19 +602,15 @@ async function viewSettings(v){
   ]);
   if(sres.error || cres.error) return v.replaceChildren(h('div', { class: 'msg err' }, 'تعذّر تحميل الإعدادات'));
   const s = sres.data;
-  const buf = h('input', { id: 'sBuf', type: 'number', min: 0, max: 60, step: 5, value: s.buffer_min });
-  const tf = s.tier_factors || { S: 1, M: 1.25, L: 1.5, XL: 2 };
-  const tfInputs = { S: 'قصير', M: 'متوسط', L: 'طويل', XL: 'طويل جدًا' };
-  const tfEls = Object.fromEntries(Object.keys(tfInputs).map(k => [k, h('input', { id: 'tf' + k, type: 'number', min: 0.5, max: 4, step: 0.05, value: tf[k] ?? 1 })]));
+  const cap = h('input', { id: 'sCap', type: 'number', min: 1, max: 50, value: s.capacity });
+  const visit = h('input', { id: 'sVisit', type: 'number', min: 15, max: 240, step: 15, value: s.visit_minutes });
   const mail = h('input', { id: 'sMail', type: 'email', class: 'ltr', value: s.notify_email || '', placeholder: 'name@example.com' });
-  const par = h('input', { id: 'sPar', type: 'checkbox', checked: Array.isArray(s.parallel_pairs) && s.parallel_pairs.length > 0 });
   const sMsg = h('div', { class: 'msg ok', hidden: true });
   const save = async () => {
-    const b = parseInt(buf.value, 10);
-    const factors = {};
-    for(const k of Object.keys(tfEls)){ const x = Number(tfEls[k].value); if(!(x >= 0.5 && x <= 4)){ sMsg.className = 'msg err'; sMsg.textContent = 'معاملات طول الشعر يجب أن تكون بين 0.5 و4'; sMsg.hidden = false; return; } factors[k] = x; }
-    if(!(b >= 0 && b <= 60)){ sMsg.className = 'msg err'; sMsg.textContent = 'الفاصل بين الخدمات من 0 إلى 60 دقيقة'; sMsg.hidden = false; return; }
-    const { error } = await sb.from('settings').update({ buffer_min: b, tier_factors: factors, parallel_pairs: par.checked ? [['hair', 'nails']] : [], notify_email: mail.value.trim() || null, updated_at: new Date().toISOString() }).eq('id', 1);
+    const c = parseInt(cap.value, 10), vm = parseInt(visit.value, 10);
+    if(!(c >= 1 && c <= 50)){ sMsg.className = 'msg err'; sMsg.textContent = 'عدد الزبونات في نفس الوقت بين 1 و50'; sMsg.hidden = false; return; }
+    if(!(vm >= 15 && vm <= 240)){ sMsg.className = 'msg err'; sMsg.textContent = 'مدة الزيارة بين 15 و240 دقيقة'; sMsg.hidden = false; return; }
+    const { error } = await sb.from('settings').update({ capacity: c, visit_minutes: vm, notify_email: mail.value.trim() || null, updated_at: new Date().toISOString() }).eq('id', 1);
     sMsg.className = error ? 'msg err' : 'msg ok';
     sMsg.textContent = error ? 'تعذّر الحفظ' : 'تم حفظ الإعدادات'; sMsg.hidden = false;
   };
@@ -648,17 +644,13 @@ async function viewSettings(v){
   };
   v.replaceChildren(
     h('div', { class: 'panel' }, h('h2', null, 'الحجز'),
-      h('p', { class: 'muted', style: 'margin-top:0' }, 'المواعيد المتاحة للزبونات تُحسب تلقائياً من فريق العمل (اختصاص كل موظفة ودوامها وإجازتها) ومن مدة كل خدمة.'),
+      h('p', { class: 'muted', style: 'margin-top:0' }, 'كل حجز يأخذ زيارة واحدة تُنفَّذ فيها كل خدمات الزبونة معاً، ولا يتغيّر وقتها بكثرة الخدمات.'),
       h('div', { class: 'grid2' },
-        h('div', { class: 'field' }, h('label', { for: 'sBuf' }, 'فاصل بين الخدمة والتي تليها (دقائق)'), buf,
-          h('div', { class: 'muted', style: 'font-size:12.5px;margin-top:4px' }, 'وقت تحضير أو تنظيف بين خدمتين لنفس الزبونة. 0 = بدون فاصل.')),
-        h('div', { class: 'field' }, h('label', { for: 'sMail' }, 'إيميل تنبيه الحجوزات الجديدة'), mail)),
-      h('div', { class: 'field' }, h('label', { class: 'chk', style: 'display:inline-flex' }, par, 'السماح بخدمات الشعر والأظافر في نفس الوقت (موظفتان على نفس الزبونة)'),
-        h('div', { class: 'muted', style: 'font-size:12.5px;margin-top:4px' }, 'عند التفعيل يقل وقت الجلسة التي تجمع شعراً وأظافر. باقي الأقسام (حمام، مكياج، شمع…) تبقى وراء بعض.')),
-      h('div', { class: 'field' }, h('label', null, 'تأثير طول الشعر على مدة الخدمة (للخدمات التي لها أحجام)'),
-        h('div', { class: 'grid2', style: 'grid-template-columns:repeat(4,1fr);gap:8px' },
-          Object.entries(tfInputs).map(([k, label]) => h('div', null, h('div', { class: 'muted', style: 'font-size:12.5px' }, label), tfEls[k]))),
-        h('div', { class: 'muted', style: 'font-size:12.5px;margin-top:4px' }, 'مثال: 1.5 تعني أن الخدمة تأخذ مرة ونصف من مدتها الأساسية.')),
+        h('div', { class: 'field' }, h('label', { for: 'sCap' }, 'عدد الزبونات في نفس الوقت'), cap,
+          h('div', { class: 'muted', style: 'font-size:12.5px;margin-top:4px' }, 'كم زبونة يقدر الصالون يخدمها بالتزامن. إذا امتلأ العدد في وقت معين يختفي من الحجز.')),
+        h('div', { class: 'field' }, h('label', { for: 'sVisit' }, 'مدة الزيارة (دقائق)'), visit,
+          h('div', { class: 'muted', style: 'font-size:12.5px;margin-top:4px' }, 'الوقت الذي يُحجز لكل زيارة، وتقريباً ساعة (60).'))),
+      h('div', { class: 'field' }, h('label', { for: 'sMail' }, 'إيميل تنبيه الحجوزات الجديدة'), mail),
       sMsg, h('button', { class: 'btn btn-primary', onclick: save }, 'حفظ')),
     h('div', { class: 'panel' }, h('h2', null, 'إغلاق أيام أو أوقات (إجازة، مناسبة)'),
       h('div', { class: 'grid2' },
@@ -769,7 +761,7 @@ async function loadManualTimes(){
     if(!data.ok) throw new Error('bad');
     if(!data.times.length){ sel.replaceChildren(h('option', { value: '' }, 'لا توجد أوقات متاحة في هذا اليوم')); note.textContent = `مدة الخدمات: ${data.minutes} دقيقة`; return; }
     sel.replaceChildren(h('option', { value: '' }, 'اختاري وقت البداية'),
-      ...data.times.map(x => h('option', { value: x.t }, `${fmtTime(x.t)} ← تنتهي ${fmtTime(x.end)} (${x.staff.join('، ')})`)));
+      ...data.times.map(x => h('option', { value: x.t }, `${fmtTime(x.t)} ← تنتهي ${fmtTime(x.end)}`)));
     note.textContent = `مدة الخدمات: ${data.minutes} دقيقة`;
   }catch(e){ sel.replaceChildren(h('option', { value: '' }, 'تعذّر تحميل الأوقات')); }
 }
