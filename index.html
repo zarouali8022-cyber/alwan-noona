@@ -521,7 +521,7 @@ const SERVICES = {
     label: "العناية بالأظافر",
     groups: [
       { title: "مانيكير وبادكير", items: [
-        { name:"بادكير ومانكير", price:90 },
+        { name:"بادكير ومانكير", price:90, paused:true }, // موقوفة مؤقتًا (الموظفة في إجازة) — احذفي paused لإعادتها
         { name:"تركيب أظافر", price:50 },
         { name:"لون أظافر", price:20 },
         { name:"لون فرنش", price:35 },
@@ -581,6 +581,7 @@ const SERVICES = {
         id: "monthly-care",
         title: "باكج العناية الشهري",
         price: 250,
+        paused: true, // موقوف مؤقتًا (الموظفة في إجازة) — احذفي paused لإعادته
         includes: [
           "جلستين حمام مغربي فاخر",
           "جلستين بادكير ومانيكير (يدين ورجول)",
@@ -600,6 +601,7 @@ const SERVICES = {
         id: "hammam-pedicure",
         title: "حمام مغربي فاخر + بديكير (يد أو رجل)",
         price: 99,
+        paused: true,
         note: "العرض لفترة محدودة",
         includes: ["حمام مغربي فاخر", "بديكير لليد أو الرجل"]
       },
@@ -622,6 +624,7 @@ const SERVICES = {
         id: "october-relax",
         title: "باقة الاسترخاء — عرض أكتوبر الوردي",
         price: 96,
+        paused: true,
         days: [6, 0, 1, 2, 3], // لا يشمل الخميس والجمعة
         note: "عرض لفترة محدودة · لا يشمل الخميس والجمعة",
         includes: ["حمام مغربي", "مساج ريلاكس", "استشوار هدية"]
@@ -630,6 +633,7 @@ const SERVICES = {
         id: "october-care",
         title: "باكج العناية — عرض أكتوبر الوردي",
         price: 250,
+        paused: true,
         note: "عرض لفترة محدودة",
         includes: ["جلستان حمام مغربي", "جلستان بادكير", "استشوار مع كل جلسة", "يمكنك مشاركة الباقة مع شخص آخر أو توزيعها على جلسات"]
       },
@@ -645,6 +649,7 @@ const SERVICES = {
         id: "october-pink-nails",
         title: "الباقة الوردية — أظافر ودلكة",
         price: 96,
+        paused: true,
         days: [0, 1, 2, 3],
         note: "عرض لفترة محدودة · من الأحد إلى الأربعاء، لا يشمل الخميس والجمعة",
         includes: ["مانيكير لليدين", "بادكير للرجلين", "دلكة سودانية", "فتلة أو شمع وجه هدية"]
@@ -653,6 +658,7 @@ const SERVICES = {
         id: "october-comfort",
         title: "باقة الجمال والراحة — عرض أكتوبر الوردي",
         price: 96,
+        paused: true,
         days: [0, 1, 2, 3],
         note: "عرض لفترة محدودة · من الأحد إلى الأربعاء، لا يشمل الخميس والجمعة",
         includes: ["مساج استرخائي", "بادكير للرجلين", "مانيكير لليدين", "لون أظافر هدية"]
@@ -701,13 +707,13 @@ function rebuildCart(items){
     if(!i || typeof i.id !== 'string') return;
     if(i.id.indexOf('pkg:') === 0){
       const p = SERVICES.offers.packages.find(p=>'pkg:'+p.id === i.id);
-      if(p) out.push({ id:i.id, name:p.title, price:p.price, tier:null });
+      if(p && !p.paused) out.push({ id:i.id, name:p.title, price:p.price, tier:null });
       return;
     }
     const [ck, gi, ii] = i.id.split(':');
     const cat = SERVICES[ck];
     const it = cat && cat.groups && cat.groups[+gi] && cat.groups[+gi].items[+ii];
-    if(!it) return;
+    if(!it || it.paused) return;
     if(it.tiers){
       if(i.tier && it.tiers[i.tier] != null) out.push({ id:i.id, name:it.name, price:it.tiers[i.tier], tier:i.tier });
     } else {
@@ -765,6 +771,7 @@ function searchResultsHtml(){
     let block = '';
     if(cat.isOffers){
       cat.packages.forEach(pkg=>{
+        if(pkg.paused) return;
         if(!matches(cat.label+' '+pkg.title+' '+pkg.includes.join(' '))) return;
         const inCart = !!findCartItem('pkg:'+pkg.id);
         count++;
@@ -775,6 +782,7 @@ function searchResultsHtml(){
     } else {
       cat.groups.forEach((g, gi)=>{
         g.items.forEach((it, ii)=>{
+          if(it.paused) return;
           if(!matches(cat.label+' '+g.title+' '+it.name)) return;
           count++;
           block += renderServiceItem(ck, gi, ii, it);
@@ -815,7 +823,7 @@ function lastBookingHtml(){
 function rebookLast(){
   const b = getLastBooking();
   if(!b) return;
-  state.cart = b.cart;
+  state.cart = rebuildCart(b.cart);
   render();
 }
 
@@ -1085,7 +1093,8 @@ function renderStep1(){
   let groupsHtml = '';
   cat.groups.forEach((g, gi)=>{
     let itemsHtml = '';
-    g.items.forEach((it, ii)=>{ itemsHtml += renderServiceItem(state.categoryKey, gi, ii, it); });
+    g.items.forEach((it, ii)=>{ if(!it.paused) itemsHtml += renderServiceItem(state.categoryKey, gi, ii, it); });
+    if(!itemsHtml) return;
     groupsHtml += `<div class="service-group"><h3 class="group-title">${g.title}</h3>${itemsHtml}</div>`;
   });
 
@@ -1119,7 +1128,7 @@ function renderServiceItem(catKey, gi, ii, it){
     </div>${tiersHtml}`;
 }
 function renderOffersView(cartBar){
-  const packagesHtml = SERVICES.offers.packages.map(pkg=>{
+  const packagesHtml = SERVICES.offers.packages.filter(pkg=>!pkg.paused).map(pkg=>{
     const id = `pkg:${pkg.id}`;
     const active = !!findCartItem(id);
     const includesHtml = pkg.includes.map(i=>`<li>${i}</li>`).join('');
