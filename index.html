@@ -594,8 +594,9 @@ const SERVICES = {
         title: "حمام مغربي فاخر + دلكة سودانية",
         price: 99,
         was: 150,
-        note: "العرض لفترة محدودة",
-        includes: ["حمام مغربي فاخر", "دلكة سودانية"]
+        until: "2026-12-31",
+        note: "عروض الشتاء والجمعة البيضاء · حتى 31 ديسمبر 2026",
+        includes: ["حمام مغربي فاخر", "دلكة سودانية", "فتلة وجه هدية"]
       },
       {
         id: "hammam-pedicure",
@@ -644,6 +645,46 @@ const SERVICES = {
         days: [0, 1, 2, 3],
         note: "من الأحد إلى الأربعاء · لا يشمل الخميس والجمعة",
         includes: ["صبغة لون واحد", "استشوار", "قص أطراف هدية"]
+      },
+      /* عروض الشتاء والجمعة البيضاء — حتى 31 ديسمبر 2026 */
+      {
+        id: "winter-color",
+        title: "صبغة لون واحد + استشوار",
+        price: 99,
+        paused: true, // مخفي حتى تُضاف صفوف عروض الشتاء إلى service_catalog في قاعدة البيانات
+        until: "2026-12-31",
+        note: "عروض الشتاء والجمعة البيضاء · حتى 31 ديسمبر 2026",
+        includes: ["صبغة لون واحد", "استشوار", "تشقير حواجب هدية"]
+      },
+      {
+        id: "winter-waxing",
+        title: "حلاوة للجسم كامل",
+        price: 99,
+        paused: true,
+        was: 150,
+        days: [6, 0, 1, 2, 3], // لا يشمل الخميس والجمعة
+        note: "عروض الشتاء والجمعة البيضاء · لا يشمل الخميس والجمعة",
+        includes: ["حلاوة للجسم كامل", "شمع هدية"]
+      },
+      {
+        id: "winter-relax",
+        title: "باقة الاسترخاء — عرض الشتاء",
+        price: 99,
+        paused: true,
+        days: [6, 0, 1, 2, 3],
+        until: "2026-12-31",
+        note: "عروض الشتاء والجمعة البيضاء · حتى 31 ديسمبر 2026 · لا يشمل الخميس والجمعة",
+        includes: ["حمام مغربي فاخر", "مساج استرخائي 30 دقيقة", "قص أطراف الشعر"]
+      },
+      {
+        id: "winter-hammam-nails",
+        title: "حمام مغربي فاخر + بديكير ومانيكير",
+        price: 99,
+        paused: true,
+        days: [6, 0, 1, 2, 3],
+        until: "2026-12-31",
+        note: "عروض الشتاء والجمعة البيضاء · حتى 31 ديسمبر 2026 · لا يشمل الخميس والجمعة",
+        includes: ["حمام مغربي فاخر", "بديكير ومانيكير", "لون مانيكير هدية"]
       },
       {
         id: "october-beauty",
@@ -734,6 +775,9 @@ let lastWaUrl = '';
    ============================================================ */
 const DRAFT_KEY = 'ann_draft';
 
+// عرض مخفي: موقوف يدويًا (paused) أو انتهى تاريخه (until، بصيغة YYYY-MM-DD)
+function pkgHidden(p){ return !!p.paused || (!!p.until && toIsoDate(new Date()) > p.until); }
+
 // يعيد بناء السلة من القائمة الحالية فتُحدَّث الأسعار وتُتجاهل الخدمات غير الموجودة
 function rebuildCart(items){
   const out = [];
@@ -741,7 +785,7 @@ function rebuildCart(items){
     if(!i || typeof i.id !== 'string') return;
     if(i.id.indexOf('pkg:') === 0){
       const p = SERVICES.offers.packages.find(p=>'pkg:'+p.id === i.id);
-      if(p && !p.paused) out.push({ id:i.id, name:p.title, price:p.price, tier:null });
+      if(p && !pkgHidden(p)) out.push({ id:i.id, name:p.title, price:p.price, tier:null });
       return;
     }
     const [ck, gi, ii] = i.id.split(':');
@@ -805,7 +849,7 @@ function searchResultsHtml(){
     let block = '';
     if(cat.isOffers){
       cat.packages.forEach(pkg=>{
-        if(pkg.paused) return;
+        if(pkgHidden(pkg)) return;
         if(!matches(cat.label+' '+pkg.title+' '+pkg.includes.join(' '))) return;
         const inCart = !!findCartItem('pkg:'+pkg.id);
         count++;
@@ -1162,7 +1206,7 @@ function renderServiceItem(catKey, gi, ii, it){
     </div>${tiersHtml}`;
 }
 function renderOffersView(cartBar){
-  const packagesHtml = SERVICES.offers.packages.filter(pkg=>!pkg.paused).map(pkg=>{
+  const packagesHtml = SERVICES.offers.packages.filter(pkg=>!pkgHidden(pkg)).map(pkg=>{
     const id = `pkg:${pkg.id}`;
     const active = !!findCartItem(id);
     const includesHtml = pkg.includes.map(i=>`<li>${i}</li>`).join('');
@@ -1195,9 +1239,21 @@ function allowedDaysForCart(){
   });
   return allowed;
 }
+/* بعض العروض لها آخر تاريخ (until): لا يُسمح بموعد بعده، وأقرب تاريخ نهاية بين عروض السلة هو الحاكم */
+function untilForCart(){
+  let u = null;
+  state.cart.forEach(i=>{
+    if(i.id.indexOf('pkg:') !== 0) return;
+    const p = SERVICES.offers.packages.find(x => 'pkg:' + x.id === i.id);
+    if(p && p.until && (!u || p.until < u)) u = p.until;
+  });
+  return u;
+}
 function dayAllowedForCart(dateObj){
   const a = allowedDaysForCart();
-  return !a || a.includes(dateObj.getDay());
+  if(a && !a.includes(dateObj.getDay())) return false;
+  const u = untilForCart();
+  return !u || toIsoDate(dateObj) <= u;
 }
 function renderStep2(){
   const dates = getBookableDates();
@@ -1228,9 +1284,11 @@ function renderStep2(){
   let hoursNote = `${bookingHoursText(state.date)}<br><span class="hours-note-sub">آخر موعد ظاهر حسب يوم الحجز المختار</span>`;
   if(USE_API){
     hoursNote = 'تُنفَّذ كل خدماتك معاً في زيارة واحدة، وتظهر الأوقات المتاحة للحجز.';
-    const daysNote = allowedDays
+    const untilIso = untilForCart();
+    const untilTxt = untilIso ? (() => { const [uy, um, ud] = untilIso.split('-').map(Number); return `${ud} ${MONTH_NAMES[um-1]} ${uy}`; })() : '';
+    const daysNote = (allowedDays
       ? `<br><span class="hours-note-sub">العرض المختار متاح أيام: ${DAY_NAMES.filter((n, i) => allowedDays.includes(i)).join('، ')} فقط.</span>`
-      : '';
+      : '') + (untilIso ? `<br><span class="hours-note-sub">العرض المختار ساري حتى ${untilTxt}.</span>` : '');
     hoursNote += daysNote;
     if(state.date){
       const a = availFor(dateIso);
